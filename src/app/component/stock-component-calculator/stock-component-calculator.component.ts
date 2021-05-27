@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 import { Plan } from 'src/app/interface/plan';
 import PriorityQueue from 'javascript-priority-queue';
 import { Stock } from 'src/app/interface/stock';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -24,7 +24,7 @@ export class StockComponentCalculatorComponent implements OnInit {
   stocks: FormGroup[];
 
   results: Stock[] = [];
-  initNmaes = ['QQQ', 'VOO', 'FIX', 'TIP', 'TLT', 'NIO'];
+  initNmaes = ['QQQ', 'VOO', 'FXI', 'TIP', 'TLT', 'NIO'];
   initPercentage = [30, 25, 20, 10, 10, 5];
   remainBP: number;
 
