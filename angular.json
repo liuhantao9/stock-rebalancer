@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "stock-rebalancer"
+    }
+  },
+  "defaultProject": "stock-rebalancer",
+  "cli": {
+    "analytics": "dd5c4775-c361-4904-bd26-d6fb6d562829"
+  }
 }
