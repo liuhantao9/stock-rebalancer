@@ -6,6 +6,11 @@
   <div class="form-group">
     <input class="form-control" placeholder="Buying power" [(ngModel)]="buyingPower">
   </div>
+  <div class="label" style="display: flex;">
+    <h4>Stock Name</h4>
+    <h4 style="padding-left: 23.5%;">Current Total Market Value</h4>
+    <h4 style="padding-left: 13%;">Percentage in Portfolio</h4>
+  </div>
   <form [formGroup]="stockForm" autocomplete="on">
       <div class="form-group" *ngFor="let stock of stocks; let i = index">
         <div [formGroup]="stock">
