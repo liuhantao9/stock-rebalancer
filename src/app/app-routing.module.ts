@@ -4,7 +4,7 @@ import { StockComponentCalculatorComponent } from './component/stock-component-c
 
 
 const routes: Routes = [
-  { path: '', component: StockComponentCalculatorComponent },
+  // { path: '', component: StockComponentCalculatorComponent },
 ];
 
 @NgModule({
