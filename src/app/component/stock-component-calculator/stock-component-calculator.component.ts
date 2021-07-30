@@ -24,7 +24,7 @@ export class StockComponentCalculatorComponent implements OnInit {
   stocks: FormGroup[];
 
   results: Stock[] = [];
-  initNmaes = ['QQQ', 'VOO', 'FXI', 'VEA', 'TIP', 'TLT', 'NIO'];
+  initNames = ['QQQ', 'VOO', 'FXI', 'VEA', 'TIP', 'TLT', 'NIO'];
   initPercentage = [25, 20, 15, 15, 10, 10, 5];
   remainBP: number;
 
@@ -36,9 +36,9 @@ export class StockComponentCalculatorComponent implements OnInit {
 
     this.stocks = <FormGroup[]>(this.stockForm.controls.stocks as FormArray).controls;
 
-    for (var i = 0; i < 6; i++) {
+    for (var i = 0; i < this.initNames.length; i++) {
       this.stocks.push(this.formBuilder.group({
-        stockName: this.initNmaes[i],
+        stockName: this.initNames[i],
         currentTotal: [''],
         stockPercentage: this.initPercentage[i],
       }));
