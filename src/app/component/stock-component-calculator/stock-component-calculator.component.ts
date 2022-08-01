@@ -41,6 +41,7 @@ export class StockComponentCalculatorComponent implements OnInit {
       this.stocks.push(this.formBuilder.group({
         stockName: this.initNames[i],
         currentTotal: [''],
+        shareNumbers: [''],
         stockPercentage: this.initPercentage[i],
       }));
     }
@@ -62,6 +63,7 @@ export class StockComponentCalculatorComponent implements OnInit {
   createStock(): FormGroup {
     return this.formBuilder.group({
       stockName: [''],
+      shareNumbers: [''],
       currentTotal: [''],
       stockPercentage: [''],
     });
@@ -84,7 +86,7 @@ export class StockComponentCalculatorComponent implements OnInit {
     for (let i = 0; i < this.stocks.length; i++) {
       if (!!this.stocks[i].controls['stockName']['value']) {
         const stockName = this.stocks[i].controls['stockName']['value'];
-        const currentTotal = this.stocks[i].controls['currentTotal']['value'];
+        const shareNumbers = this.stocks[i].controls['shareNumbers']['value'];
         let stockPrice = 0;
         const targetPercentage = this.stocks[i].controls['stockPercentage']['value'];
 
@@ -110,6 +112,8 @@ export class StockComponentCalculatorComponent implements OnInit {
         .catch(err => {
           console.error(err);
         });
+
+        const currentTotal = shareNumbers * stockPrice;
 
         let currPercentage = (currentTotal / tc) * 100;
         let stock: Stock = {

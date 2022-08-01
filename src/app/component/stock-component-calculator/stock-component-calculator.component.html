@@ -10,9 +10,10 @@
     <input class="form-control" placeholder="Buying power" [(ngModel)]="buyingPower" (change)="onBuyingPowerChanged()">
   </div>
   <div class="label" style="display: flex;">
-    <h4>Stock Name</h4>
-    <h4 style="padding-left: 23.5%;">Current Total Market Value</h4>
-    <h4 style="padding-left: 13%;">Percentage in Portfolio</h4>
+    <h5>Stock Name</h5>
+    <h5 style="padding-left: 15rem;">Number of Shares Witholding</h5>
+    <h5 style="padding-left: 5rem;">Current Total Market Value</h5>
+    <h5 style="padding-left: 7rem;">Percentage in Portfolio</h5>
   </div>
   <form [formGroup]="stockForm" autocomplete="on">
       <div class="form-group" *ngFor="let stock of stocks; let i = index">
@@ -20,6 +21,9 @@
           <div class="form-row">
             <div class="col">
               <input formControlName="stockName" class="form-control" placeholder="stock name">
+            </div>
+            <div class="col">
+              <input formControlName="shareNumbers" class="form-control" placeholder="number of shares witholding">
             </div>
             <div class="col">
               <input formControlName="currentTotal" class="form-control" placeholder="current total($)">
