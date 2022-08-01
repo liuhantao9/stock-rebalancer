@@ -20,6 +20,7 @@ export class StockComponentCalculatorComponent implements OnInit {
   stockForm: FormGroup;
   buyingPower: number;
   totalCapital: number;
+  currentStockValue: number;
   plans: Plan[];
   stocks: FormGroup[];
 
@@ -44,6 +45,18 @@ export class StockComponentCalculatorComponent implements OnInit {
       }));
     }
 
+  }
+
+  onCurrentStockValueChanged() {
+    if (this.buyingPower) {
+      this.totalCapital = Number(this.buyingPower) + Number(this.currentStockValue);
+    }
+  }
+
+  onBuyingPowerChanged() {
+    if (this.currentStockValue) {
+      this.totalCapital = Number(this.buyingPower) + Number(this.currentStockValue);
+    }
   }
 
   createStock(): FormGroup {
