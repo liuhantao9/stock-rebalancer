@@ -55,14 +55,14 @@
     </tr>
     <tr *ngFor="let stock of results">
         <td>{{ stock.stockName | uppercase }}</td>
-        <td>{{ stock.currentTotal | number: '1.2-2' }}</td>
-        <td>{{ stock.targetPercentage | number: '1.2-2' }}</td>
         <td>{{ stock.stockPrice | number: '1.2-2' }}</td>
+        <td>{{ stock.currentTotal | number: '1.2-2' }}</td>
+        <td>{{ stock.resultTotal | number: '1.2-2' }}</td>
         <td>{{ stock.currPercentage | number: '1.2-2' }}</td>
+        <td>{{ stock.targetPercentage | number: '1.2-2' }}</td>
         <td>{{ stock.diff | number: '1.2-2' }}</td>
         <td>{{ stock.resultPercentage | number: '1.2-2' }}</td>
         <td>{{ stock.numToBuy | number: '1.2-2' }}</td>
-        <td>{{ stock.resultTotal | number: '1.2-2' }}</td>
     </tr>
     <tr>
       <th scope="row">Remaining Buying Power</th>

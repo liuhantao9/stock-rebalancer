@@ -90,16 +90,19 @@ export class StockComponentCalculatorComponent implements OnInit {
         let stockPrice = 0;
         const targetPercentage = this.stocks[i].controls['stockPercentage']['value'];
 
-        // Fetch a query to find out the price
-        await fetch(`https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-summary?symbol=${stockName}&region=US`, {
-          "method": "GET",
-          "headers": {
-            "x-rapidapi-key": environment['X-RAPIDAPI-KEY'],
-            "x-rapidapi-host": environment['X-RAPIDAPI-HOST']
+        const options = {
+          method: 'GET',
+          headers: {
+            'X-RapidAPI-Key': 'b4ad6df1ebmsha41564313dcd338p185ff1jsn71767a01f781',
+            'X-RapidAPI-Host': 'stock-market-data.p.rapidapi.com'
           }
-        })
+        };
+
+        // Fetch a query to find out the price
+        await fetch(`https://stock-market-data.p.rapidapi.com/yfinance/price?ticker_symbol=${stockName}`, options)
         .then(response => response.text())
         .then(body => {
+          console.log(body);
           try {
             return JSON.parse(body)
           } catch {
@@ -114,6 +117,7 @@ export class StockComponentCalculatorComponent implements OnInit {
         });
 
         const currentTotal = shareNumbers * stockPrice;
+        this.stocks[i].controls['stockPercentage'].setValue(currentTotal);
 
         let currPercentage = (currentTotal / tc) * 100;
         let stock: Stock = {
