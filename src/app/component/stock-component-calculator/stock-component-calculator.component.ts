@@ -117,7 +117,7 @@ export class StockComponentCalculatorComponent implements OnInit {
         });
 
         const currentTotal = shareNumbers * stockPrice;
-        this.stocks[i].controls['stockPercentage'].setValue(currentTotal);
+        this.stocks[i].controls['currentTotal'].setValue(currentTotal);
 
         let currPercentage = (currentTotal / tc) * 100;
         let stock: Stock = {
