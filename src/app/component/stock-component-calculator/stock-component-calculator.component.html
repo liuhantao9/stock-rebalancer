@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <h2>Stock Rebalancer</h2>
   <div class="form-group">
-    <input class="form-control" placeholder="Total Capital" [(ngModel)]="totalCapital">
+    <input class="form-control" placeholder="Total Capital" [(ngModel)]="totalCapital" disabled>
   </div>
   <div class="form-group">
     <input class="form-control" placeholder="Current Stock Value" [(ngModel)]="currentStockValue" (change)="onCurrentStockValueChanged()">
@@ -44,14 +44,14 @@
   <table>
     <tr>
       <th scope="col">Stock Name</th>
-      <th scope="col">Current Total</th>
-      <th scope="col">Target Percentage</th>
       <th scope="col">Stock Price</th>
+      <th scope="col">Current Total</th>
+      <th scope="col">Total Capital Result</th>
       <th scope="col">Current Percentage</th>
+      <th scope="col">Target Percentage</th>
       <th scope="col">Difference</th>
       <th scope="col">Result Percentage</th>
       <th scope="col">Number of Shares to Buy</th>
-      <th scope="col">Total Capital Result</th>
     </tr>
     <tr *ngFor="let stock of results">
         <td>{{ stock.stockName | uppercase }}</td>
