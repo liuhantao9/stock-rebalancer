@@ -78,6 +78,10 @@ export class StockComponentCalculatorComponent implements OnInit {
   }
 
   async onRebalance() {
+    const sum = this.initPercentage.reduce((partialSum, a) => partialSum + a, 0);
+
+    if (sum !== 100) throw new Error("Percentage sum must equal to 100");
+
     this.results = [];
 
     let bp = this.buyingPower;
