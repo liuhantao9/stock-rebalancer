@@ -98,12 +98,12 @@ export class StockComponentCalculatorComponent implements OnInit {
           method: 'GET',
           headers: {
             'X-RapidAPI-Key': 'b4ad6df1ebmsha41564313dcd338p185ff1jsn71767a01f781',
-            'X-RapidAPI-Host': 'stock-market-data.p.rapidapi.com'
+            'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com'
           }
         };
 
         // Fetch a query to find out the price
-        await fetch(`https://stock-market-data.p.rapidapi.com/yfinance/price?ticker_symbol=${stockName}`, options)
+        await fetch(`https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=${stockName}&region=US`, options)
         .then(response => response.text())
         .then(body => {
           console.log(body);
@@ -114,7 +114,7 @@ export class StockComponentCalculatorComponent implements OnInit {
           }
         })
         .then(body => {
-          stockPrice = Number(body['price']['regularMarketPrice']['raw'])
+          stockPrice = Number(body['price']['postMarketPrice']['raw'])
         })
         .catch(err => {
           console.error(err);
