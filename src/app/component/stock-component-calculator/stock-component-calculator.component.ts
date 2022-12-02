@@ -114,7 +114,7 @@ export class StockComponentCalculatorComponent implements OnInit {
           }
         })
         .then(body => {
-          stockPrice = Number(body['price']['postMarketPrice']['raw'])
+          stockPrice = Number(body['price']['regularMarketPrice']['raw'])
         })
         .catch(err => {
           console.error(err);
