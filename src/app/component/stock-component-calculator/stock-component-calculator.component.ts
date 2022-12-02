@@ -26,7 +26,7 @@ export class StockComponentCalculatorComponent implements OnInit {
 
   results: Stock[] = [];
   initNames = ['QQQ', 'VOO', 'FXI', 'VEA', 'TIP', 'TLT', 'INTC', 'NIO'];
-  initPercentage = [25, 18, 15, 12, 20, 5, 3, 2];
+  initPercentage = [25, 20, 18, 12, 15, 5, 3, 2];
   remainBP: number;
 
   ngOnInit(): void {
