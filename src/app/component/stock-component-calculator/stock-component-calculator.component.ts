@@ -25,8 +25,8 @@ export class StockComponentCalculatorComponent implements OnInit {
   stocks: FormGroup[];
 
   results: Stock[] = [];
-  initNames = ['QQQ', 'FXI', 'VWO', 'VOO', 'VEA', 'INTC', 'NIO', 'MGYOY'];
-  initPercentage = [25, 25, 20, 15, 10, 3, 1, 1];
+  initNames = ['QQQ', 'VOO', 'VWO', 'FXI', 'VEA', 'INTC', 'MGYOY'];
+  initPercentage = [30, 30, 15, 10, 10, 4, 1];
   remainBP: number;
 
   ngOnInit(): void {
@@ -135,6 +135,7 @@ export class StockComponentCalculatorComponent implements OnInit {
           numToBuy: 0,
           resultTotal: 0,
         }
+        console.log(stock)
         maxHeap.enqueue(stock, stock.diff);
       }
     }
