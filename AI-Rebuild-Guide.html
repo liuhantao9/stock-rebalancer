@@ -1,0 +1,1537 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <style>
+[data-color-mode*='light'], [data-color-mode*='light'] body, .markdown-style[theme*='light'] { --color-prettylights-syntax-comment: #6e7781; --color-prettylights-syntax-constant: #0550ae; --color-prettylights-syntax-entity: #8250df; --color-prettylights-syntax-storage-modifier-import: #24292f; --color-prettylights-syntax-entity-tag: #116329; --color-prettylights-syntax-keyword: #cf222e; --color-prettylights-syntax-string: #0a3069; --color-prettylights-syntax-variable: #953800; --color-prettylights-syntax-brackethighlighter-unmatched: #82071e; --color-prettylights-syntax-invalid-illegal-text: #f6f8fa; --color-prettylights-syntax-invalid-illegal-bg: #82071e; --color-prettylights-syntax-carriage-return-text: #f6f8fa; --color-prettylights-syntax-carriage-return-bg: #cf222e; --color-prettylights-syntax-string-regexp: #116329; --color-prettylights-syntax-markup-list: #3b2300; --color-prettylights-syntax-markup-heading: #0550ae; --color-prettylights-syntax-markup-italic: #24292f; --color-prettylights-syntax-markup-bold: #24292f; --color-prettylights-syntax-markup-deleted-text: #82071e; --color-prettylights-syntax-markup-deleted-bg: #FFEBE9; --color-prettylights-syntax-markup-inserted-text: #116329; --color-prettylights-syntax-markup-inserted-bg: #dafbe1; --color-prettylights-syntax-markup-changed-text: #953800; --color-prettylights-syntax-markup-changed-bg: #ffd8b5; --color-prettylights-syntax-markup-ignored-text: #eaeef2; --color-prettylights-syntax-markup-ignored-bg: #0550ae; --color-prettylights-syntax-meta-diff-range: #8250df; --color-prettylights-syntax-brackethighlighter-angle: #57606a; --color-prettylights-syntax-sublimelinter-gutter-mark: #8c959f; --color-prettylights-syntax-constant-other-reference-link: #0a3069; --color-fg-default: #24292f; --color-fg-muted: #57606a; --color-fg-subtle: #6e7781; --color-canvas-default: #ffffff; --color-canvas-subtle: #f6f8fa; --color-border-default: #d0d7de; --color-border-muted: hsla(210,18%,87%,1); --color-neutral-muted: rgba(175,184,193,0.2); --color-accent-fg: #0969da; --color-accent-emphasis: #0969da; --color-attention-subtle: #fff8c5; --color-danger-fg: #cf222e; }
+[data-color-mode*='dark'], [data-color-mode*='dark'] body, .markdown-style[theme*='dark'] { --color-prettylights-syntax-comment: #8b949e; --color-prettylights-syntax-constant: #79c0ff; --color-prettylights-syntax-entity: #d2a8ff; --color-prettylights-syntax-storage-modifier-import: #c9d1d9; --color-prettylights-syntax-entity-tag: #7ee787; --color-prettylights-syntax-keyword: #ff7b72; --color-prettylights-syntax-string: #a5d6ff; --color-prettylights-syntax-variable: #ffa657; --color-prettylights-syntax-brackethighlighter-unmatched: #f85149; --color-prettylights-syntax-invalid-illegal-text: #f0f6fc; --color-prettylights-syntax-invalid-illegal-bg: #8e1519; --color-prettylights-syntax-carriage-return-text: #f0f6fc; --color-prettylights-syntax-carriage-return-bg: #b62324; --color-prettylights-syntax-string-regexp: #7ee787; --color-prettylights-syntax-markup-list: #f2cc60; --color-prettylights-syntax-markup-heading: #1f6feb; --color-prettylights-syntax-markup-italic: #c9d1d9; --color-prettylights-syntax-markup-bold: #c9d1d9; --color-prettylights-syntax-markup-deleted-text: #ffdcd7; --color-prettylights-syntax-markup-deleted-bg: #67060c; --color-prettylights-syntax-markup-inserted-text: #aff5b4; --color-prettylights-syntax-markup-inserted-bg: #033a16; --color-prettylights-syntax-markup-changed-text: #ffdfb6; --color-prettylights-syntax-markup-changed-bg: #5a1e02; --color-prettylights-syntax-markup-ignored-text: #c9d1d9; --color-prettylights-syntax-markup-ignored-bg: #1158c7; --color-prettylights-syntax-meta-diff-range: #d2a8ff; --color-prettylights-syntax-brackethighlighter-angle: #8b949e; --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58; --color-prettylights-syntax-constant-other-reference-link: #a5d6ff; --color-fg-default: #c9d1d9; --color-fg-muted: #8b949e; --color-fg-subtle: #484f58; --color-canvas-default: #0d1117; --color-canvas-subtle: #161b22; --color-border-default: #30363d; --color-border-muted: #21262d; --color-neutral-muted: rgba(110,118,129,0.4); --color-accent-fg: #58a6ff; --color-accent-emphasis: #1f6feb; --color-attention-subtle: rgba(187,128,9,0.15); --color-danger-fg: #f85149; }
+.markdown-style { display: block; -webkit-text-size-adjust: 100%; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"; font-size: 16px; line-height: 1.5; word-wrap: break-word; color: var(--color-fg-default); background-color: var(--color-canvas-default); } .markdown-style details, .markdown-style figcaption, .markdown-style figure { display: block; } .markdown-style summary { display: list-item; } .markdown-style [hidden] { display: none !important; } .markdown-style a { background-color: transparent; color: var(--color-accent-fg); text-decoration: none; } .markdown-style a:active, .markdown-style a:hover { outline-width: 0; } .markdown-style abbr[title] { border-bottom: none; text-decoration: underline dotted; } .markdown-style b, .markdown-style strong { font-weight: 600; } .markdown-style dfn { font-style: italic; } .markdown-style h1 { margin: .67em 0; font-weight: 600; padding-bottom: .3em; font-size: 2em; border-bottom: 1px solid var(--color-border-muted); } .markdown-style mark { background-color: var(--color-attention-subtle); color: var(--color-text-primary); } .markdown-style small { font-size: 90%; } .markdown-style sub, .markdown-style sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; } .markdown-style sub { bottom: -0.25em; } .markdown-style sup { top: -0.5em; } .markdown-style img { border-style: none; max-width: 100%; box-sizing: content-box; background-color: var(--color-canvas-default); } .markdown-style code, .markdown-style kbd, .markdown-style pre, .markdown-style samp { font-family: monospace,monospace; font-size: 1em; } .markdown-style figure { margin: 1em 40px; } .markdown-style hr { box-sizing: content-box; overflow: hidden; background: transparent; border-bottom: 1px solid var(--color-border-muted); height: .25em; padding: 0; margin: 24px 0; background-color: var(--color-border-default); border: 0; } .markdown-style input { font: inherit; margin: 0; overflow: visible; font-family: inherit; font-size: inherit; line-height: inherit; } .markdown-style [type=button], .markdown-style [type=reset], .markdown-style [type=submit] { -webkit-appearance: button; } .markdown-style [type=button]::-moz-focus-inner, .markdown-style [type=reset]::-moz-focus-inner, .markdown-style [type=submit]::-moz-focus-inner { border-style: none; padding: 0; } .markdown-style [type=button]:-moz-focusring, .markdown-style [type=reset]:-moz-focusring, .markdown-style [type=submit]:-moz-focusring { outline: 1px dotted ButtonText; } .markdown-style [type=checkbox], .markdown-style [type=radio] { box-sizing: border-box; padding: 0; } .markdown-style [type=number]::-webkit-inner-spin-button, .markdown-style [type=number]::-webkit-outer-spin-button { height: auto; } .markdown-style [type=search] { -webkit-appearance: textfield; outline-offset: -2px; } .markdown-style [type=search]::-webkit-search-cancel-button, .markdown-style [type=search]::-webkit-search-decoration { -webkit-appearance: none; } .markdown-style ::-webkit-input-placeholder { color: inherit; opacity: .54; } .markdown-style ::-webkit-file-upload-button { -webkit-appearance: button; font: inherit; } .markdown-style a:hover { text-decoration: underline; } .markdown-style hr::before { display: table; content: ""; } .markdown-style hr::after { display: table; clear: both; content: ""; } .markdown-style table { border-spacing: 0; border-collapse: collapse; display: block; width: max-content; max-width: 100%; overflow: auto; } .markdown-style td, .markdown-style th { padding: 0; } .markdown-style details summary { cursor: pointer; } .markdown-style details:not([open])>*:not(summary) { display: none !important; } .markdown-style kbd { display: inline-block; padding: 3px 5px; font: 11px ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace; line-height: 10px; color: var(--color-fg-default); vertical-align: middle; background-color: var(--color-canvas-subtle); border: solid 1px var(--color-neutral-muted); border-bottom-color: var(--color-neutral-muted); border-radius: 6px; box-shadow: inset 0 -1px 0 var(--color-neutral-muted); } .markdown-style h1, .markdown-style h2, .markdown-style h3, .markdown-style h4, .markdown-style h5, .markdown-style h6 { margin-top: 24px; margin-bottom: 16px; font-weight: 600; line-height: 1.25; } .markdown-style h2 { font-weight: 600; padding-bottom: .3em; font-size: 1.5em; border-bottom: 1px solid var(--color-border-muted); } .markdown-style h3 { font-weight: 600; font-size: 1.25em; } .markdown-style h4 { font-weight: 600; font-size: 1em; } .markdown-style h5 { font-weight: 600; font-size: .875em; } .markdown-style h6 { font-weight: 600; font-size: .85em; color: var(--color-fg-muted); } .markdown-style p { margin-top: 0; margin-bottom: 10px; } .markdown-style blockquote { margin: 0; padding: 0 1em; color: var(--color-fg-muted); border-left: .25em solid var(--color-border-default); } .markdown-style ul, .markdown-style ol { margin-top: 0; margin-bottom: 0; padding-left: 2em; } .markdown-style ol ol, .markdown-style ul ol { list-style-type: lower-roman; } .markdown-style ul ul ol, .markdown-style ul ol ol, .markdown-style ol ul ol, .markdown-style ol ol ol { list-style-type: lower-alpha; } .markdown-style dd { margin-left: 0; } .markdown-style tt, .markdown-style code { font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace; font-size: 12px; } .markdown-style pre { margin-top: 0; margin-bottom: 0; font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace; font-size: 12px; word-wrap: normal; } .markdown-style .octicon { display: inline-block; overflow: visible !important; vertical-align: text-bottom; fill: currentColor; } .markdown-style ::placeholder { color: var(--color-fg-subtle); opacity: 1; } .markdown-style input::-webkit-outer-spin-button, .markdown-style input::-webkit-inner-spin-button { margin: 0; -webkit-appearance: none; appearance: none; }
+.markdown-style .token.comment, .markdown-style .token.prolog, .markdown-style .token.doctype, .markdown-style .token.cdata { color: var(--color-prettylights-syntax-comment); } .markdown-style .token.namespace { opacity: 0.7; } .markdown-style .token.tag, .markdown-style .token.selector, .markdown-style .token.constant, .markdown-style .token.symbol, .markdown-style .token.deleted { color: var(--color-prettylights-syntax-entity-tag); } .markdown-style .token.maybe-class-name { color: var(--color-prettylights-syntax-variable); } .markdown-style .token.property-access, .markdown-style .token.operator, .markdown-style .token.boolean, .markdown-style .token.number, .markdown-style .token.selector .markdown-style .token.class, .markdown-style .token.attr-name, .markdown-style .token.string, .markdown-style .token.char, .markdown-style .token.builtin { color: var(--color-prettylights-syntax-constant); } .markdown-style .token.deleted { color: var(--color-prettylights-syntax-markup-deleted-text); } .markdown-style .token.property { color: var(--color-prettylights-syntax-constant); } .markdown-style .token.punctuation { color: var(--color-prettylights-syntax-markup-bold); } .markdown-style .token.function { color: var(--color-prettylights-syntax-entity); } .markdown-style .code-line .token.deleted { background-color: var(--color-prettylights-syntax-markup-deleted-bg); } .markdown-style .token.inserted { color: var(--color-prettylights-syntax-markup-inserted-text); } .markdown-style .code-line .token.inserted { background-color: var(--color-prettylights-syntax-markup-inserted-bg); } .markdown-style .token.variable { color: var(--color-prettylights-syntax-constant); } .markdown-style .token.entity, .markdown-style .token.url, .language-css .markdown-style .token.string, .style .markdown-style .token.string { color: var(--color-prettylights-syntax-string); } .markdown-style .token.color, .markdown-style .token.atrule, .markdown-style .token.attr-value, .markdown-style .token.function, .markdown-style .token.class-name { color: var(--color-prettylights-syntax-string); } .markdown-style .token.rule, .markdown-style .token.regex, .markdown-style .token.important, .markdown-style .token.keyword { color: var(--color-prettylights-syntax-keyword); } .markdown-style .token.coord { color: var(--color-prettylights-syntax-meta-diff-range); } .markdown-style .token.important, .markdown-style .token.bold { font-weight: bold; } .markdown-style .token.italic { font-style: italic; } .markdown-style .token.entity { cursor: help; }
+.markdown-style [data-catalyst] { display: block; } .markdown-style g-emoji { font-family: "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 1em; font-style: normal !important; font-weight: 400; line-height: 1; vertical-align: -0.075em; } .markdown-style g-emoji img { width: 1em; height: 1em; } .markdown-style::before { display: table; content: ""; } .markdown-style::after { display: table; clear: both; content: ""; } .markdown-style>*:first-child { margin-top: 0 !important; } .markdown-style>*:last-child { margin-bottom: 0 !important; } .markdown-style a:not([href]) { color: inherit; text-decoration: none; } .markdown-style .absent { color: var(--color-danger-fg); } .markdown-style a.anchor { float: left; padding-right: 4px; margin-left: -20px; line-height: 1; } .markdown-style a.anchor:focus { outline: none; } .markdown-style p, .markdown-style blockquote, .markdown-style ul, .markdown-style ol, .markdown-style dl, .markdown-style table, .markdown-style pre, .markdown-style details { margin-top: 0; margin-bottom: 16px; } .markdown-style blockquote>:first-child { margin-top: 0; } .markdown-style blockquote>:last-child { margin-bottom: 0; } .markdown-style sup>a::before { content: "["; } .markdown-style sup>a::after { content: "]"; }
+.markdown-style .octicon-video { border: 1px solid #d0d7de !important; border-radius: 6px !important; display: block; } .markdown-style .octicon-video summary { border-bottom: 1px solid #d0d7de !important; padding: 8px 16px !important; cursor: pointer; } .markdown-style .octicon-video > video { display: block !important; max-width: 100% !important; padding: 2px; box-sizing: border-box; border-bottom-right-radius: 6px !important; border-bottom-left-radius: 6px !important; } .markdown-style details.octicon-video:not([open])>*:not(summary) { display: none !important; } .markdown-style details.octicon-video:not([open]) > summary { border-bottom: 0 !important; } .markdown-style h1 .octicon-link, .markdown-style h2 .octicon-link, .markdown-style h3 .octicon-link, .markdown-style h4 .octicon-link, .markdown-style h5 .octicon-link, .markdown-style h6 .octicon-link { color: var(--color-fg-default); vertical-align: middle; visibility: hidden; } .markdown-style h1:hover .anchor, .markdown-style h2:hover .anchor, .markdown-style h3:hover .anchor, .markdown-style h4:hover .anchor, .markdown-style h5:hover .anchor, .markdown-style h6:hover .anchor { text-decoration: none; } .markdown-style h1:hover .anchor .octicon-link, .markdown-style h2:hover .anchor .octicon-link, .markdown-style h3:hover .anchor .octicon-link, .markdown-style h4:hover .anchor .octicon-link, .markdown-style h5:hover .anchor .octicon-link, .markdown-style h6:hover .anchor .octicon-link { visibility: visible; } .markdown-style h1 tt, .markdown-style h1 code, .markdown-style h2 tt, .markdown-style h2 code, .markdown-style h3 tt, .markdown-style h3 code, .markdown-style h4 tt, .markdown-style h4 code, .markdown-style h5 tt, .markdown-style h5 code, .markdown-style h6 tt, .markdown-style h6 code { padding: 0 .2em; font-size: inherit; } .markdown-style ul.no-list, .markdown-style ol.no-list { padding: 0; list-style-type: none; } .markdown-style ol[type="1"] { list-style-type: decimal; } .markdown-style ol[type=a] { list-style-type: lower-alpha; } .markdown-style ol[type=i] { list-style-type: lower-roman; } .markdown-style div>ol:not([type]) { list-style-type: decimal; } .markdown-style ul ul, .markdown-style ul ol, .markdown-style ol ol, .markdown-style ol ul { margin-top: 0; margin-bottom: 0; } .markdown-style li>p { margin-top: 16px; } .markdown-style li+li { margin-top: .25em; } .markdown-style dl { padding: 0; } .markdown-style dl dt { padding: 0; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: 600; } .markdown-style dl dd { padding: 0 16px; margin-bottom: 16px; } .markdown-style table th { font-weight: 600; } .markdown-style table th, .markdown-style table td { padding: 6px 13px; border: 1px solid var(--color-border-default); } .markdown-style table tr { background-color: var(--color-canvas-default); border-top: 1px solid var(--color-border-muted); } .markdown-style table tr:nth-child(2n) { background-color: var(--color-canvas-subtle); } .markdown-style table img { background-color: transparent; vertical-align: middle; } .markdown-style img[align=right] { padding-left: 20px; } .markdown-style img[align=left] { padding-right: 20px; } .markdown-style .emoji { max-width: none; vertical-align: text-top; background-color: transparent; } .markdown-style span.frame { display: block; overflow: hidden; } .markdown-style span.frame>span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0 0; overflow: hidden; border: 1px solid var(--color-border-default); } .markdown-style span.frame span img { display: block; float: left; } .markdown-style span.frame span span { display: block; padding: 5px 0 0; clear: both; color: var(--color-fg-default); } .markdown-style span.align-center { display: block; overflow: hidden; clear: both; } .markdown-style span.align-center>span { display: block; margin: 13px auto 0; overflow: hidden; text-align: center; } .markdown-style span.align-center span img { margin: 0 auto; text-align: center; } .markdown-style span.align-right { display: block; overflow: hidden; clear: both; } .markdown-style span.align-right>span { display: block; margin: 13px 0 0; overflow: hidden; text-align: right; } .markdown-style span.align-right span img { margin: 0; text-align: right; } .markdown-style span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; } .markdown-style span.float-left span { margin: 13px 0 0; } .markdown-style span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; } .markdown-style span.float-right>span { display: block; margin: 13px auto 0; overflow: hidden; text-align: right; } .markdown-style code, .markdown-style tt { padding: .2em .4em; margin: 0; font-size: 85%; background-color: var(--color-neutral-muted); border-radius: 6px; } .markdown-style code br, .markdown-style tt br { display: none; } .markdown-style del code { text-decoration: inherit; } .markdown-style pre code { font-size: 100%; } .markdown-style pre>code { padding: 0; margin: 0; word-break: normal; white-space: pre; background: transparent; border: 0; } .markdown-style pre { position: relative; font-size: 85%; line-height: 1.45; background-color: var(--color-canvas-subtle); border-radius: 6px; } .markdown-style pre code, .markdown-style pre tt { display: inline; max-width: auto; padding: 0; margin: 0; overflow: visible; line-height: inherit; word-wrap: normal; background-color: transparent; border: 0; } .markdown-style pre > code { padding: 16px; overflow: auto; display: block; } .markdown-style .csv-data td, .markdown-style .csv-data th { padding: 5px; overflow: hidden; font-size: 12px; line-height: 1; text-align: left; white-space: nowrap; } .markdown-style .csv-data .blob-num { padding: 10px 8px 9px; text-align: right; background: var(--color-canvas-default); border: 0; } .markdown-style .csv-data tr { border-top: 0; } .markdown-style .csv-data th { font-weight: 600; background: var(--color-canvas-subtle); border-top: 0; } .markdown-style .footnotes { font-size: 12px; color: var(--color-fg-muted); border-top: 1px solid var(--color-border-default); } .markdown-style .footnotes ol { padding-left: 16px; } .markdown-style .footnotes li { position: relative; } .markdown-style .footnotes li:target::before { position: absolute; top: -8px; right: -8px; bottom: -8px; left: -24px; pointer-events: none; content: ""; border: 2px solid var(--color-accent-emphasis); border-radius: 6px; } .markdown-style .footnotes li:target { color: var(--color-fg-default); } .markdown-style .footnotes .data-footnote-backref g-emoji { font-family: monospace; } .markdown-style .task-list-item { list-style-type: none; } .markdown-style .task-list-item label { font-weight: 400; } .markdown-style .task-list-item.enabled label { cursor: pointer; } .markdown-style .task-list-item+.task-list-item { margin-top: 3px; } .markdown-style .task-list-item .handle { display: none; } .markdown-style .task-list-item-checkbox, .markdown-style input[type="checkbox"] { margin: 0 .2em .25em -1.6em; vertical-align: middle; } .markdown-style .contains-task-list:dir(rtl) .task-list-item-checkbox, .markdown-style .contains-task-list:dir(rtl) input[type="checkbox"] { margin: 0 -1.6em .25em .2em; } .markdown-style ::-webkit-calendar-picker-indicator { filter: invert(50%); }
+
+/** copy button style **/
+.markdown-style pre .copied {
+  display: flex;
+  position: absolute;
+  cursor: pointer;
+  color: #a5afbb;
+  top: 6px;
+  right: 6px;
+  border-radius: 5px;
+  background: #82828226;
+  padding: 6px;
+  font-size: 12px;
+  transition: all .3s;
+}
+.markdown-style pre .copied:not(.active) { visibility: hidden; }
+.markdown-style pre:hover .copied { visibility: visible; }
+.markdown-style pre:hover .copied:hover { background: #4caf50; color: #fff; }
+.markdown-style pre:hover .copied:active,
+.markdown-style pre .copied.active { background: #2e9b33; color: #fff; }
+.markdown-style pre .copied svg { position: relative; }
+.markdown-style pre .copied .octicon-copy { display: block; }
+.markdown-style pre .copied .octicon-check { display: none; }
+.markdown-style pre .active .octicon-copy { display: none; }
+.markdown-style pre .active .octicon-check { display: block; }
+
+/** octicon style **/
+.markdown-style h1:hover a.anchor .octicon-link:before,
+.markdown-style h2:hover a.anchor .octicon-link:before,
+.markdown-style h3:hover a.anchor .octicon-link:before,
+.markdown-style h4:hover a.anchor .octicon-link:before,
+.markdown-style h5:hover a.anchor .octicon-link:before,
+.markdown-style h6:hover a.anchor .octicon-link:before {
+  width: 16px;
+  height: 16px;
+  content: ' ';
+  display: inline-block;
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
+  mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
+}
+
+.markdown-style ::-webkit-scrollbar {
+  background: transparent;
+  width: 8px;
+  height: 8px;
+}
+
+.markdown-style ::-webkit-scrollbar-thumb {
+  background: var(--color-fg-muted);
+  border-radius: 10px;
+}
+</style>
+  </head>
+  <body><dark-mode style="position: fixed; top: 8px; left: 10px; z-index: 999;" dark="Dark" light="Light" permanent="true"></dark-mode><script>const t=document;const e="_dark_mode_theme_";const s="permanent";const o="colorschemechange";const i="permanentcolorscheme";const h="light";const r="dark";const n=(t,e,s=e)=>{Object.defineProperty(t,s,{enumerable:true,get(){const t=this.getAttribute(e);return t===null?"":t},set(t){this.setAttribute(e,t)}})};const c=(t,e,s=e)=>{Object.defineProperty(t,s,{enumerable:true,get(){return this.hasAttribute(e)},set(t){if(t){this.setAttribute(e,"")}else{this.removeAttribute(e)}}})};class a extends HTMLElement{static get observedAttributes(){return["mode",h,r,s]}LOCAL_NANE=e;constructor(){super();this.t()}connectedCallback(){n(this,"mode");n(this,r);n(this,h);c(this,s);const a=localStorage.getItem(e);if(a&&[h,r].includes(a)){this.mode=a;this.permanent=true}if(this.permanent&&!a){localStorage.setItem(e,this.mode)}const l=[h,r].includes(a);if(this.permanent&&a){this.o()}else{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){this.mode=r;this.o()}if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches){this.mode=h;this.o()}}if(!this.permanent&&!l){window.matchMedia("(prefers-color-scheme: light)").onchange=t=>{this.mode=t.matches?h:r;this.o()};window.matchMedia("(prefers-color-scheme: dark)").onchange=t=>{this.mode=t.matches?r:h;this.o()}}const d=new MutationObserver(((s,h)=>{this.mode=t.documentElement.dataset.colorMode;if(this.permanent&&l){localStorage.setItem(e,this.mode);this.i(i,{permanent:this.permanent})}this.h();this.i(o,{colorScheme:this.mode})}));d.observe(t.documentElement,{attributes:true});this.i(o,{colorScheme:this.mode});this.h()}attributeChangedCallback(t,s,o){if(t==="mode"&&s!==o&&[h,r].includes(o)){const t=localStorage.getItem(e);if(this.mode===t){this.mode=o;this.h();this.o()}else if(this.mode&&this.mode!==t){this.h();this.o()}}else if((t===h||t===r)&&s!==o){this.h()}if(t==="permanent"&&typeof this.permanent==="boolean"){this.permanent?localStorage.setItem(e,this.mode):localStorage.removeItem(e)}}o(){t.documentElement.setAttribute("data-color-mode",this.mode)}h(){this.icon.textContent=this.mode===h?"🌒":"🌞";this.text.textContent=this.mode===h?this.getAttribute(r):this.getAttribute(h);if(!this.text.textContent&&this.text.parentElement&&this.text){this.text.parentElement.removeChild(this.text)}}t(){var s=this.attachShadow({mode:"open"});this.label=t.createElement("span");this.label.setAttribute("class","wrapper");this.label.onclick=()=>{this.mode=this.mode===h?r:h;if(this.permanent){localStorage.setItem(e,this.mode)}this.o();this.h()};s.appendChild(this.label);this.icon=t.createElement("span");this.icon.part="icon";this.label.appendChild(this.icon);this.text=t.createElement("span");this.text.part="text";this.label.appendChild(this.text);const o=`
+[data-color-mode*='dark'], [data-color-mode*='dark'] body {
+  color-scheme: dark;
+  --color-theme-bg: #0d1117;
+  --color-theme-text: #c9d1d9;
+  background-color: var(--color-theme-bg);
+  color: var(--color-theme-text);
+}
+
+[data-color-mode*='light'], [data-color-mode*='light'] body {
+  color-scheme: light;
+  --color-theme-bg: #fff;
+  --color-theme-text: #24292f;
+  background-color: var(--color-theme-bg);
+  color: var(--color-theme-text);
+}`;const i="_dark_mode_style_";const n=t.getElementById(i);if(!n){var c=t.createElement("style");c.id=i;c.textContent=o;t.head.appendChild(c)}var a=t.createElement("style");a.textContent=`
+    .wrapper { cursor: pointer; user-select: none; position: relative; }
+    .wrapper > span + span { margin-left: .4rem; }
+    `;s.appendChild(a)}i(t,e){this.dispatchEvent(new CustomEvent(t,{bubbles:true,composed:true,detail:e}))}}customElements.define("dark-mode",a);</script><div style="max-width: 960px; margin: 0 auto 60px auto; padding: 8px;max-width: 960px;" class="markdown-style">
+    <h1 id="ai-guided-project-rebuild-guide"><a class="anchor" aria-hidden="true" tabindex="-1" href="#ai-guided-project-rebuild-guide"><span class="octicon octicon-link"></span></a>AI-Guided Project Rebuild Guide</h1>
+    <h2 id="how-to-guide-an-ai-to-build-a-stock-portfolio-rebalancer-application"><a class="anchor" aria-hidden="true" tabindex="-1" href="#how-to-guide-an-ai-to-build-a-stock-portfolio-rebalancer-application"><span class="octicon octicon-link"></span></a>How to Guide an AI to Build a Stock Portfolio Rebalancer Application</h2>
+    <hr>
+    <h2 id="table-of-contents"><a class="anchor" aria-hidden="true" tabindex="-1" href="#table-of-contents"><span class="octicon octicon-link"></span></a>Table of Contents</h2>
+    <ol>
+      <li><a href="#1-introduction">Introduction</a></li>
+      <li><a href="#2-pre-requisites--setup">Pre-requisites &#x26; Setup</a></li>
+      <li><a href="#3-phase-1-project-initialization">Phase 1: Project Initialization</a></li>
+      <li><a href="#4-phase-2-type-definitions">Phase 2: Type Definitions</a></li>
+      <li><a href="#5-phase-3-core-services">Phase 3: Core Services</a></li>
+      <li><a href="#6-phase-4-custom-hooks">Phase 4: Custom Hooks</a></li>
+      <li><a href="#7-phase-5-ui-components">Phase 5: UI Components</a></li>
+      <li><a href="#8-phase-6-main-application">Phase 6: Main Application</a></li>
+      <li><a href="#9-phase-7-styling--polish">Phase 7: Styling &#x26; Polish</a></li>
+      <li><a href="#10-phase-8-testing--debugging">Phase 8: Testing &#x26; Debugging</a></li>
+      <li><a href="#11-prompt-templates">Prompt Templates</a></li>
+      <li><a href="#12-best-practices-for-ai-collaboration">Best Practices for AI Collaboration</a></li>
+    </ol>
+    <hr>
+    <h2 id="1-introduction"><a class="anchor" aria-hidden="true" tabindex="-1" href="#1-introduction"><span class="octicon octicon-link"></span></a>1. Introduction</h2>
+    <p>This guide provides a structured approach for using AI assistants (like Claude, ChatGPT, or GitHub Copilot) to rebuild a Stock Portfolio Rebalancer application. The application helps investors calculate optimal stock purchases to maintain target portfolio allocations.</p>
+    <h3 id="what-youll-build"><a class="anchor" aria-hidden="true" tabindex="-1" href="#what-youll-build"><span class="octicon octicon-link"></span></a>What You'll Build</h3>
+    <ul>
+      <li>A React TypeScript web application</li>
+      <li>Real-time stock price integration via Finnhub API</li>
+      <li>Multiple rebalancing algorithms (Greedy, Proportional, Hybrid)</li>
+      <li>User authentication and portfolio persistence</li>
+      <li>Responsive UI with Tailwind CSS</li>
+    </ul>
+    <h3 id="key-principles"><a class="anchor" aria-hidden="true" tabindex="-1" href="#key-principles"><span class="octicon octicon-link"></span></a>Key Principles</h3>
+    <ol>
+      <li><strong>Break down complex tasks</strong> into smaller, manageable prompts</li>
+      <li><strong>Provide context</strong> at each step</li>
+      <li><strong>Review and iterate</strong> on AI-generated code</li>
+      <li><strong>Test incrementally</strong> before moving to the next phase</li>
+    </ol>
+    <hr>
+    <h2 id="2-pre-requisites--setup"><a class="anchor" aria-hidden="true" tabindex="-1" href="#2-pre-requisites--setup"><span class="octicon octicon-link"></span></a>2. Pre-requisites &#x26; Setup</h2>
+    <h3 id="technical-requirements"><a class="anchor" aria-hidden="true" tabindex="-1" href="#technical-requirements"><span class="octicon octicon-link"></span></a>Technical Requirements</h3>
+    <ul>
+      <li>Node.js (v16 or higher)</li>
+      <li>npm or yarn package manager</li>
+      <li>A code editor (VS Code recommended)</li>
+      <li>Git for version control</li>
+      <li>Finnhub API key (free tier available at <a href="https://finnhub.io/">https://finnhub.io/</a>)</li>
+    </ul>
+    <h3 id="initial-prompt-to-ai"><a class="anchor" aria-hidden="true" tabindex="-1" href="#initial-prompt-to-ai"><span class="octicon octicon-link"></span></a>Initial Prompt to AI</h3>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">I want to create a React TypeScript application for stock portfolio
+</span><span class="code-line line-number" line="2">rebalancing. The app should:
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4">1. Allow users to input their current stock holdings
+</span><span class="code-line line-number" line="5">2. Fetch real-time stock prices from Finnhub API
+</span><span class="code-line line-number" line="6">3. Calculate optimal purchases to rebalance according to target percentages
+</span><span class="code-line line-number" line="7">4. Support multiple rebalancing strategies
+</span><span class="code-line line-number" line="8">5. Save portfolios to browser localStorage
+</span><span class="code-line line-number" line="9">6. Have user authentication
+</span><span class="code-line line-number" line="10">
+</span><span class="code-line line-number" line="11">Please help me set up the initial project structure using Create React App
+</span><span class="code-line line-number" line="12">with TypeScript and Tailwind CSS.
+</span></code><div onclick="copied(this)" data-code="I want to create a React TypeScript application for stock portfolio
+rebalancing. The app should:
+
+1. Allow users to input their current stock holdings
+2. Fetch real-time stock prices from Finnhub API
+3. Calculate optimal purchases to rebalance according to target percentages
+4. Support multiple rebalancing strategies
+5. Save portfolios to browser localStorage
+6. Have user authentication
+
+Please help me set up the initial project structure using Create React App
+with TypeScript and Tailwind CSS.
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <hr>
+    <h2 id="3-phase-1-project-initialization"><a class="anchor" aria-hidden="true" tabindex="-1" href="#3-phase-1-project-initialization"><span class="octicon octicon-link"></span></a>3. Phase 1: Project Initialization</h2>
+    <h3 id="step-11-create-react-app"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-11-create-react-app"><span class="octicon octicon-link"></span></a>Step 1.1: Create React App</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create a new React application with TypeScript template using Create React App.
+</span><span class="code-line line-number" line="2">Then configure Tailwind CSS for styling. Show me the exact commands and
+</span><span class="code-line line-number" line="3">configuration files needed.
+</span></code><div onclick="copied(this)" data-code="Create a new React application with TypeScript template using Create React App.
+Then configure Tailwind CSS for styling. Show me the exact commands and
+configuration files needed.
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <p><strong>Expected Output:</strong></p>
+    <ul>
+      <li><code>npx create-react-app stock-rebalancer --template typescript</code></li>
+      <li>Tailwind CSS installation and configuration</li>
+      <li>PostCSS configuration</li>
+      <li>Updated <code>index.css</code> with Tailwind directives</li>
+    </ul>
+    <h3 id="step-12-project-structure"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-12-project-structure"><span class="octicon octicon-link"></span></a>Step 1.2: Project Structure</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Set up the following folder structure for our stock rebalancer app:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">src/
+</span><span class="code-line line-number" line="4">├── components/     # React UI components
+</span><span class="code-line line-number" line="5">├── hooks/          # Custom React hooks
+</span><span class="code-line line-number" line="6">├── services/       # Business logic and API calls
+</span><span class="code-line line-number" line="7">├── types/          # TypeScript type definitions
+</span><span class="code-line line-number" line="8">├── App.tsx         # Main application
+</span><span class="code-line line-number" line="9">└── index.tsx       # Entry point
+</span><span class="code-line line-number" line="10">
+</span><span class="code-line line-number" line="11">Create placeholder files for each folder with appropriate exports.
+</span></code><div onclick="copied(this)" data-code="Set up the following folder structure for our stock rebalancer app:
+
+src/
+├── components/     # React UI components
+├── hooks/          # Custom React hooks
+├── services/       # Business logic and API calls
+├── types/          # TypeScript type definitions
+├── App.tsx         # Main application
+└── index.tsx       # Entry point
+
+Create placeholder files for each folder with appropriate exports.
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h3 id="step-13-environment-configuration"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-13-environment-configuration"><span class="octicon octicon-link"></span></a>Step 1.3: Environment Configuration</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create environment configuration for the Finnhub API key:
+</span><span class="code-line line-number" line="2">1. Create a .env.example file with placeholder
+</span><span class="code-line line-number" line="3">2. Add .env to .gitignore
+</span><span class="code-line line-number" line="4">3. Show how to access the environment variable in React
+</span></code><div onclick="copied(this)" data-code="Create environment configuration for the Finnhub API key:
+1. Create a .env.example file with placeholder
+2. Add .env to .gitignore
+3. Show how to access the environment variable in React
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <hr>
+    <h2 id="4-phase-2-type-definitions"><a class="anchor" aria-hidden="true" tabindex="-1" href="#4-phase-2-type-definitions"><span class="octicon octicon-link"></span></a>4. Phase 2: Type Definitions</h2>
+    <h3 id="step-21-core-types"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-21-core-types"><span class="octicon octicon-link"></span></a>Step 2.1: Core Types</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create TypeScript interfaces for a stock portfolio rebalancer in types/index.ts:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">1. StockInput - User input for a stock (symbol, shares, targetPercentage)
+</span><span class="code-line line-number" line="4">2. Stock - Rebalancing result (includes sharesToBuy, investmentAmount, etc.)
+</span><span class="code-line line-number" line="5">3. PortfolioData - Complete portfolio state
+</span><span class="code-line line-number" line="6">4. RebalanceResult - Algorithm output with stocks array and remaining cash
+</span><span class="code-line line-number" line="7">5. RebalanceOptions - Algorithm configuration (strategy, fractionalShares, etc.)
+</span><span class="code-line line-number" line="8">6. PortfolioAnalysis - Metrics like totalDeviation, utilizationRate
+</span><span class="code-line line-number" line="9">
+</span><span class="code-line line-number" line="10">Make sure to include:
+</span><span class="code-line line-number" line="11">- Current values calculated from live prices
+</span><span class="code-line line-number" line="12">- Percentage calculations (current%, target%, result%)
+</span><span class="code-line line-number" line="13">- Support for multiple strategies: 'greedy', 'proportional', 'hybrid'
+</span></code><div onclick="copied(this)" data-code="Create TypeScript interfaces for a stock portfolio rebalancer in types/index.ts:
+
+1. StockInput - User input for a stock (symbol, shares, targetPercentage)
+2. Stock - Rebalancing result (includes sharesToBuy, investmentAmount, etc.)
+3. PortfolioData - Complete portfolio state
+4. RebalanceResult - Algorithm output with stocks array and remaining cash
+5. RebalanceOptions - Algorithm configuration (strategy, fractionalShares, etc.)
+6. PortfolioAnalysis - Metrics like totalDeviation, utilizationRate
+
+Make sure to include:
+- Current values calculated from live prices
+- Percentage calculations (current%, target%, result%)
+- Support for multiple strategies: &#x27;greedy&#x27;, &#x27;proportional&#x27;, &#x27;hybrid&#x27;
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h3 id="step-22-auth--storage-types"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-22-auth--storage-types"><span class="octicon octicon-link"></span></a>Step 2.2: Auth &#x26; Storage Types</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Add TypeScript interfaces for authentication and storage:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">1. User - id, email, displayName, createdAt
+</span><span class="code-line line-number" line="4">2. AuthState - user, isAuthenticated, loading, error
+</span><span class="code-line line-number" line="5">3. SavedPortfolio - id, name, description, stocks, createdAt, updatedAt
+</span><span class="code-line line-number" line="6">4. UserPreferences - defaultBuyingPower, fractionalShares, etc.
+</span><span class="code-line line-number" line="7">
+</span><span class="code-line line-number" line="8">Export all types from types/index.ts
+</span></code><div onclick="copied(this)" data-code="Add TypeScript interfaces for authentication and storage:
+
+1. User - id, email, displayName, createdAt
+2. AuthState - user, isAuthenticated, loading, error
+3. SavedPortfolio - id, name, description, stocks, createdAt, updatedAt
+4. UserPreferences - defaultBuyingPower, fractionalShares, etc.
+
+Export all types from types/index.ts
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <hr>
+    <h2 id="5-phase-3-core-services"><a class="anchor" aria-hidden="true" tabindex="-1" href="#5-phase-3-core-services"><span class="octicon octicon-link"></span></a>5. Phase 3: Core Services</h2>
+    <h3 id="step-31-stock-api-service"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-31-stock-api-service"><span class="octicon octicon-link"></span></a>Step 3.1: Stock API Service</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create stockApiService.ts that integrates with Finnhub API:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">Requirements:
+</span><span class="code-line line-number" line="4">1. Singleton pattern for the service instance
+</span><span class="code-line line-number" line="5">2. Fetch stock quotes using endpoint:
+</span><span class="code-line line-number" line="6">   https://finnhub.io/api/v1/quote?symbol={SYMBOL}&#x26;token={API_KEY}
+</span><span class="code-line line-number" line="7">3. Implement 5-minute client-side caching to reduce API calls
+</span><span class="code-line line-number" line="8">4. Rate limiting: 200ms between requests, 1s between batches of 5 stocks
+</span><span class="code-line line-number" line="9">5. Batch processing for multiple stock symbols
+</span><span class="code-line line-number" line="10">6. Error handling for 401 (invalid key) and 429 (rate limit) errors
+</span><span class="code-line line-number" line="11">7. Methods: getPrice(symbol), getPrices(symbols[]), clearCache(), getStats()
+</span><span class="code-line line-number" line="12">
+</span><span class="code-line line-number" line="13">The quote response has: c (current price), o (open), h (high), l (low)
+</span><span class="code-line line-number" line="14">Use the 'c' field for current price.
+</span></code><div onclick="copied(this)" data-code="Create stockApiService.ts that integrates with Finnhub API:
+
+Requirements:
+1. Singleton pattern for the service instance
+2. Fetch stock quotes using endpoint:
+   https://finnhub.io/api/v1/quote?symbol={SYMBOL}&#x26;token={API_KEY}
+3. Implement 5-minute client-side caching to reduce API calls
+4. Rate limiting: 200ms between requests, 1s between batches of 5 stocks
+5. Batch processing for multiple stock symbols
+6. Error handling for 401 (invalid key) and 429 (rate limit) errors
+7. Methods: getPrice(symbol), getPrices(symbols[]), clearCache(), getStats()
+
+The quote response has: c (current price), o (open), h (high), l (low)
+Use the &#x27;c&#x27; field for current price.
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h3 id="step-32-basic-rebalancing-service"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-32-basic-rebalancing-service"><span class="octicon octicon-link"></span></a>Step 3.2: Basic Rebalancing Service</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create rebalanceService.ts with a basic rebalancing algorithm:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">Requirements:
+</span><span class="code-line line-number" line="4">1. PriorityQueue class using max heap for stock prioritization
+</span><span class="code-line line-number" line="5">2. calculateRebalance(stocks, buyingPower, options) function
+</span><span class="code-line line-number" line="6">3. Greedy algorithm: always buy the most underweight stock first
+</span><span class="code-line line-number" line="7">4. Validate that target percentages sum to 100%
+</span><span class="code-line line-number" line="8">5. Calculate shares to buy based on current prices
+</span><span class="code-line line-number" line="9">6. Return RebalanceResult with updated stocks and remainingCash
+</span><span class="code-line line-number" line="10">
+</span><span class="code-line line-number" line="11">Priority calculation should consider:
+</span><span class="code-line line-number" line="12">- Percentage gap from target
+</span><span class="code-line line-number" line="13">- Dollar gap from target
+</span><span class="code-line line-number" line="14">- Affordability (can we buy at least 1 share?)
+</span></code><div onclick="copied(this)" data-code="Create rebalanceService.ts with a basic rebalancing algorithm:
+
+Requirements:
+1. PriorityQueue class using max heap for stock prioritization
+2. calculateRebalance(stocks, buyingPower, options) function
+3. Greedy algorithm: always buy the most underweight stock first
+4. Validate that target percentages sum to 100%
+5. Calculate shares to buy based on current prices
+6. Return RebalanceResult with updated stocks and remainingCash
+
+Priority calculation should consider:
+- Percentage gap from target
+- Dollar gap from target
+- Affordability (can we buy at least 1 share?)
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h3 id="step-33-advanced-rebalancing-service"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-33-advanced-rebalancing-service"><span class="octicon octicon-link"></span></a>Step 3.3: Advanced Rebalancing Service</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create advancedRebalanceService.ts with sophisticated rebalancing:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">Implement three strategies:
+</span><span class="code-line line-number" line="4">
+</span><span class="code-line line-number" line="5">1. GREEDY: Always buy most underweight stock
+</span><span class="code-line line-number" line="6">   - Simple priority-based allocation
+</span><span class="code-line line-number" line="7">   - Good for concentrated portfolios
+</span><span class="code-line line-number" line="8">
+</span><span class="code-line line-number" line="9">2. PROPORTIONAL: Distribute proportionally to gaps
+</span><span class="code-line line-number" line="10">   - Calculate gap weights
+</span><span class="code-line line-number" line="11">   - Two-pass allocation for overflow handling
+</span><span class="code-line line-number" line="12">
+</span><span class="code-line line-number" line="13">3. HYBRID (default): Combines both approaches
+</span><span class="code-line line-number" line="14">   - Phase 1: Allocate 70% proportionally to stocks with >2% gaps
+</span><span class="code-line line-number" line="15">   - Phase 2: Use remaining 30% with greedy approach
+</span><span class="code-line line-number" line="16">   - Phase 3: Aggressive cash utilization (use remaining &#x3C;$1)
+</span><span class="code-line line-number" line="17">
+</span><span class="code-line line-number" line="18">Additional requirements:
+</span><span class="code-line line-number" line="19">- AdvancedPriorityQueue with binary search insertion
+</span><span class="code-line line-number" line="20">- Multi-factor priority: |percentDiff|*10 + dollarGap/1000 + affordability
+</span><span class="code-line line-number" line="21">- Portfolio analysis: totalDeviation, utilizationRate, maxDeviation
+</span><span class="code-line line-number" line="22">- Input validation: duplicates, valid percentages, price availability
+</span><span class="code-line line-number" line="23">- Support for fractional shares option
+</span><span class="code-line line-number" line="24">- Minimum trade amount configuration
+</span></code><div onclick="copied(this)" data-code="Create advancedRebalanceService.ts with sophisticated rebalancing:
+
+Implement three strategies:
+
+1. GREEDY: Always buy most underweight stock
+   - Simple priority-based allocation
+   - Good for concentrated portfolios
+
+2. PROPORTIONAL: Distribute proportionally to gaps
+   - Calculate gap weights
+   - Two-pass allocation for overflow handling
+
+3. HYBRID (default): Combines both approaches
+   - Phase 1: Allocate 70% proportionally to stocks with >2% gaps
+   - Phase 2: Use remaining 30% with greedy approach
+   - Phase 3: Aggressive cash utilization (use remaining <$1)
+
+Additional requirements:
+- AdvancedPriorityQueue with binary search insertion
+- Multi-factor priority: |percentDiff|*10 + dollarGap/1000 + affordability
+- Portfolio analysis: totalDeviation, utilizationRate, maxDeviation
+- Input validation: duplicates, valid percentages, price availability
+- Support for fractional shares option
+- Minimum trade amount configuration
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h3 id="step-34-authentication-service"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-34-authentication-service"><span class="octicon octicon-link"></span></a>Step 3.4: Authentication Service</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create authService.ts for user authentication using localStorage:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">Requirements:
+</span><span class="code-line line-number" line="4">1. User registration with email/password validation
+</span><span class="code-line line-number" line="5">   - Email format validation
+</span><span class="code-line line-number" line="6">   - Password minimum length (6 characters)
+</span><span class="code-line line-number" line="7">   - Unique email check
+</span><span class="code-line line-number" line="8">2. Sign in with credential verification
+</span><span class="code-line line-number" line="9">3. Session management with 7-day expiration tokens
+</span><span class="code-line line-number" line="10">4. Store users in localStorage key: 'stock-rebalancer-auth'
+</span><span class="code-line line-number" line="11">5. Simple password hashing (note: not production-grade)
+</span><span class="code-line line-number" line="12">6. Methods: signUp, signIn, signOut, getCurrentUser, updateProfile
+</span><span class="code-line line-number" line="13">
+</span><span class="code-line line-number" line="14">Session structure:
+</span><span class="code-line line-number" line="15">- userId, token, expiresAt
+</span><span class="code-line line-number" line="16">- Auto-cleanup of expired sessions
+</span></code><div onclick="copied(this)" data-code="Create authService.ts for user authentication using localStorage:
+
+Requirements:
+1. User registration with email/password validation
+   - Email format validation
+   - Password minimum length (6 characters)
+   - Unique email check
+2. Sign in with credential verification
+3. Session management with 7-day expiration tokens
+4. Store users in localStorage key: &#x27;stock-rebalancer-auth&#x27;
+5. Simple password hashing (note: not production-grade)
+6. Methods: signUp, signIn, signOut, getCurrentUser, updateProfile
+
+Session structure:
+- userId, token, expiresAt
+- Auto-cleanup of expired sessions
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h3 id="step-35-user-storage-service"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-35-user-storage-service"><span class="octicon octicon-link"></span></a>Step 3.5: User Storage Service</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create userStorageService.ts for portfolio persistence:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">Requirements:
+</span><span class="code-line line-number" line="4">1. Portfolio CRUD operations (create, read, update, delete)
+</span><span class="code-line line-number" line="5">2. Per-user isolated storage using: 'stock-rebalancer-user-{userId}'
+</span><span class="code-line line-number" line="6">3. Auto-save with dirty tracking
+</span><span class="code-line line-number" line="7">4. Portfolio metadata: id, name, description, tags, timestamps
+</span><span class="code-line line-number" line="8">5. Duplicate portfolio functionality
+</span><span class="code-line line-number" line="9">6. Import/export as JSON
+</span><span class="code-line line-number" line="10">7. Storage statistics (count, total size)
+</span><span class="code-line line-number" line="11">8. Deep cloning for data integrity
+</span><span class="code-line line-number" line="12">
+</span><span class="code-line line-number" line="13">Methods needed:
+</span><span class="code-line line-number" line="14">- savePortfolio(userId, portfolio)
+</span><span class="code-line line-number" line="15">- loadPortfolio(userId, portfolioId)
+</span><span class="code-line line-number" line="16">- listPortfolios(userId)
+</span><span class="code-line line-number" line="17">- deletePortfolio(userId, portfolioId)
+</span><span class="code-line line-number" line="18">- duplicatePortfolio(userId, portfolioId, newName)
+</span><span class="code-line line-number" line="19">- exportData(userId) / importData(userId, jsonData)
+</span></code><div onclick="copied(this)" data-code="Create userStorageService.ts for portfolio persistence:
+
+Requirements:
+1. Portfolio CRUD operations (create, read, update, delete)
+2. Per-user isolated storage using: &#x27;stock-rebalancer-user-{userId}&#x27;
+3. Auto-save with dirty tracking
+4. Portfolio metadata: id, name, description, tags, timestamps
+5. Duplicate portfolio functionality
+6. Import/export as JSON
+7. Storage statistics (count, total size)
+8. Deep cloning for data integrity
+
+Methods needed:
+- savePortfolio(userId, portfolio)
+- loadPortfolio(userId, portfolioId)
+- listPortfolios(userId)
+- deletePortfolio(userId, portfolioId)
+- duplicatePortfolio(userId, portfolioId, newName)
+- exportData(userId) / importData(userId, jsonData)
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <hr>
+    <h2 id="6-phase-4-custom-hooks"><a class="anchor" aria-hidden="true" tabindex="-1" href="#6-phase-4-custom-hooks"><span class="octicon octicon-link"></span></a>6. Phase 4: Custom Hooks</h2>
+    <h3 id="step-41-portfolio-hook"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-41-portfolio-hook"><span class="octicon octicon-link"></span></a>Step 4.1: Portfolio Hook</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create usePortfolio.ts custom hook for portfolio state management:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">State to manage:
+</span><span class="code-line line-number" line="4">- stocks: StockInput[] (the portfolio holdings)
+</span><span class="code-line line-number" line="5">- buyingPower: number
+</span><span class="code-line line-number" line="6">- currentStockValue: number (auto-calculated)
+</span><span class="code-line line-number" line="7">- totalCapital: number (auto-calculated)
+</span><span class="code-line line-number" line="8">- hasUnsavedChanges: boolean
+</span><span class="code-line line-number" line="9">
+</span><span class="code-line line-number" line="10">Functions to expose:
+</span><span class="code-line line-number" line="11">- addStock() - add new empty stock entry
+</span><span class="code-line line-number" line="12">- removeStock(index) - remove stock (min 1 required)
+</span><span class="code-line line-number" line="13">- updateStock(index, field, value) - update any stock field
+</span><span class="code-line line-number" line="14">- setBuyingPower(amount)
+</span><span class="code-line line-number" line="15">- calculateRebalance(options, prices) - trigger calculation
+</span><span class="code-line line-number" line="16">- resetPortfolio() - clear to defaults
+</span><span class="code-line line-number" line="17">
+</span><span class="code-line line-number" line="18">Auto-calculations:
+</span><span class="code-line line-number" line="19">- currentStockValue = sum of (shares * price) for all stocks
+</span><span class="code-line line-number" line="20">- totalCapital = currentStockValue + buyingPower
+</span><span class="code-line line-number" line="21">- Validate percentages sum to 100
+</span></code><div onclick="copied(this)" data-code="Create usePortfolio.ts custom hook for portfolio state management:
+
+State to manage:
+- stocks: StockInput[] (the portfolio holdings)
+- buyingPower: number
+- currentStockValue: number (auto-calculated)
+- totalCapital: number (auto-calculated)
+- hasUnsavedChanges: boolean
+
+Functions to expose:
+- addStock() - add new empty stock entry
+- removeStock(index) - remove stock (min 1 required)
+- updateStock(index, field, value) - update any stock field
+- setBuyingPower(amount)
+- calculateRebalance(options, prices) - trigger calculation
+- resetPortfolio() - clear to defaults
+
+Auto-calculations:
+- currentStockValue = sum of (shares * price) for all stocks
+- totalCapital = currentStockValue + buyingPower
+- Validate percentages sum to 100
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h3 id="step-42-auth-hook"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-42-auth-hook"><span class="octicon octicon-link"></span></a>Step 4.2: Auth Hook</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create useAuth.ts custom hook wrapping authService:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">State:
+</span><span class="code-line line-number" line="4">- user: User | null
+</span><span class="code-line line-number" line="5">- isAuthenticated: boolean
+</span><span class="code-line line-number" line="6">- loading: boolean
+</span><span class="code-line line-number" line="7">- error: string | null
+</span><span class="code-line line-number" line="8">
+</span><span class="code-line line-number" line="9">Functions:
+</span><span class="code-line line-number" line="10">- signIn(email, password)
+</span><span class="code-line line-number" line="11">- signUp(email, password, displayName)
+</span><span class="code-line line-number" line="12">- signOut()
+</span><span class="code-line line-number" line="13">- updateProfile(updates)
+</span><span class="code-line line-number" line="14">- clearError()
+</span><span class="code-line line-number" line="15">
+</span><span class="code-line line-number" line="16">On mount: check for existing session and restore user
+</span><span class="code-line line-number" line="17">Handle errors gracefully and expose via error state
+</span></code><div onclick="copied(this)" data-code="Create useAuth.ts custom hook wrapping authService:
+
+State:
+- user: User | null
+- isAuthenticated: boolean
+- loading: boolean
+- error: string | null
+
+Functions:
+- signIn(email, password)
+- signUp(email, password, displayName)
+- signOut()
+- updateProfile(updates)
+- clearError()
+
+On mount: check for existing session and restore user
+Handle errors gracefully and expose via error state
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h3 id="step-43-stock-prices-hook"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-43-stock-prices-hook"><span class="octicon octicon-link"></span></a>Step 4.3: Stock Prices Hook</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create useStockPrices.ts for fetching and caching stock prices:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">State:
+</span><span class="code-line line-number" line="4">- prices: Map&#x3C;string, number> (symbol -> price)
+</span><span class="code-line line-number" line="5">- loading: boolean
+</span><span class="code-line line-number" line="6">- error: string | null
+</span><span class="code-line line-number" line="7">
+</span><span class="code-line line-number" line="8">Functions:
+</span><span class="code-line line-number" line="9">- fetchPrices(symbols[]) - fetch prices for given symbols
+</span><span class="code-line line-number" line="10">- getPrice(symbol) - get cached price
+</span><span class="code-line line-number" line="11">- refreshAll() - refresh all cached prices
+</span><span class="code-line line-number" line="12">
+</span><span class="code-line line-number" line="13">Features:
+</span><span class="code-line line-number" line="14">- Batch fetching using stockApiService
+</span><span class="code-line line-number" line="15">- Loading states per symbol or global
+</span><span class="code-line line-number" line="16">- Error handling with user-friendly messages
+</span></code><div onclick="copied(this)" data-code="Create useStockPrices.ts for fetching and caching stock prices:
+
+State:
+- prices: Map<string, number> (symbol -> price)
+- loading: boolean
+- error: string | null
+
+Functions:
+- fetchPrices(symbols[]) - fetch prices for given symbols
+- getPrice(symbol) - get cached price
+- refreshAll() - refresh all cached prices
+
+Features:
+- Batch fetching using stockApiService
+- Loading states per symbol or global
+- Error handling with user-friendly messages
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h3 id="step-44-user-storage-hook"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-44-user-storage-hook"><span class="octicon octicon-link"></span></a>Step 4.4: User Storage Hook</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create useUserStorage.ts for portfolio persistence:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">State:
+</span><span class="code-line line-number" line="4">- portfolios: SavedPortfolio[]
+</span><span class="code-line line-number" line="5">- currentPortfolioId: string | null
+</span><span class="code-line line-number" line="6">- preferences: UserPreferences
+</span><span class="code-line line-number" line="7">- storageStats: { count, totalSize }
+</span><span class="code-line line-number" line="8">
+</span><span class="code-line line-number" line="9">Functions:
+</span><span class="code-line line-number" line="10">- savePortfolio(portfolioData, name, description?)
+</span><span class="code-line line-number" line="11">- loadPortfolio(portfolioId)
+</span><span class="code-line line-number" line="12">- deletePortfolio(portfolioId)
+</span><span class="code-line line-number" line="13">- duplicatePortfolio(portfolioId)
+</span><span class="code-line line-number" line="14">- updatePreferences(updates)
+</span><span class="code-line line-number" line="15">- importFromJson(jsonString)
+</span><span class="code-line line-number" line="16">- exportToJson()
+</span><span class="code-line line-number" line="17">
+</span><span class="code-line line-number" line="18">Auto-refresh portfolio list when changes occur
+</span></code><div onclick="copied(this)" data-code="Create useUserStorage.ts for portfolio persistence:
+
+State:
+- portfolios: SavedPortfolio[]
+- currentPortfolioId: string | null
+- preferences: UserPreferences
+- storageStats: { count, totalSize }
+
+Functions:
+- savePortfolio(portfolioData, name, description?)
+- loadPortfolio(portfolioId)
+- deletePortfolio(portfolioId)
+- duplicatePortfolio(portfolioId)
+- updatePreferences(updates)
+- importFromJson(jsonString)
+- exportToJson()
+
+Auto-refresh portfolio list when changes occur
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <hr>
+    <h2 id="7-phase-5-ui-components"><a class="anchor" aria-hidden="true" tabindex="-1" href="#7-phase-5-ui-components"><span class="octicon octicon-link"></span></a>7. Phase 5: UI Components</h2>
+    <h3 id="step-51-stock-input-component"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-51-stock-input-component"><span class="octicon octicon-link"></span></a>Step 5.1: Stock Input Component</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create StockInput.tsx component for entering individual stocks:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">Props:
+</span><span class="code-line line-number" line="4">- stock: StockInput
+</span><span class="code-line line-number" line="5">- index: number
+</span><span class="code-line line-number" line="6">- currentPrice: number | null
+</span><span class="code-line line-number" line="7">- onChange: (index, field, value) => void
+</span><span class="code-line line-number" line="8">- onRemove: (index) => void
+</span><span class="code-line line-number" line="9">- canRemove: boolean
+</span><span class="code-line line-number" line="10">
+</span><span class="code-line line-number" line="11">UI elements (grid layout):
+</span><span class="code-line line-number" line="12">1. Stock symbol input (auto-uppercase, max 5 chars)
+</span><span class="code-line line-number" line="13">2. Shares owned input (number, min 0)
+</span><span class="code-line line-number" line="14">3. Current value (disabled, calculated: shares * price)
+</span><span class="code-line line-number" line="15">4. Target percentage input (number, 0-100)
+</span><span class="code-line line-number" line="16">5. Remove button (X icon, disabled if canRemove=false)
+</span><span class="code-line line-number" line="17">
+</span><span class="code-line line-number" line="18">Styling: Use Tailwind CSS with responsive grid
+</span><span class="code-line line-number" line="19">Show loading state when price is null
+</span><span class="code-line line-number" line="20">Format currency values with $ and commas
+</span></code><div onclick="copied(this)" data-code="Create StockInput.tsx component for entering individual stocks:
+
+Props:
+- stock: StockInput
+- index: number
+- currentPrice: number | null
+- onChange: (index, field, value) => void
+- onRemove: (index) => void
+- canRemove: boolean
+
+UI elements (grid layout):
+1. Stock symbol input (auto-uppercase, max 5 chars)
+2. Shares owned input (number, min 0)
+3. Current value (disabled, calculated: shares * price)
+4. Target percentage input (number, 0-100)
+5. Remove button (X icon, disabled if canRemove=false)
+
+Styling: Use Tailwind CSS with responsive grid
+Show loading state when price is null
+Format currency values with $ and commas
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h3 id="step-52-results-panel-component"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-52-results-panel-component"><span class="octicon octicon-link"></span></a>Step 5.2: Results Panel Component</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create ResultsPanel.tsx as a sliding side panel:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">Props:
+</span><span class="code-line line-number" line="4">- isOpen: boolean
+</span><span class="code-line line-number" line="5">- onClose: () => void
+</span><span class="code-line line-number" line="6">- results: RebalanceResult | EnhancedRebalanceResult
+</span><span class="code-line line-number" line="7">- isEnhanced: boolean
+</span><span class="code-line line-number" line="8">
+</span><span class="code-line line-number" line="9">Features:
+</span><span class="code-line line-number" line="10">1. Slide-in animation from right side
+</span><span class="code-line line-number" line="11">2. Backdrop overlay with click-to-close
+</span><span class="code-line line-number" line="12">3. Close button in header
+</span><span class="code-line line-number" line="13">4. Conditional rendering: EnhancedResultsTable or basic ResultsTable
+</span><span class="code-line line-number" line="14">5. Summary stats at top (total invested, remaining cash, utilization)
+</span><span class="code-line line-number" line="15">
+</span><span class="code-line line-number" line="16">Animation: Use CSS transitions (transform, opacity)
+</span><span class="code-line line-number" line="17">Width: 80% on mobile, 600px on desktop
+</span></code><div onclick="copied(this)" data-code="Create ResultsPanel.tsx as a sliding side panel:
+
+Props:
+- isOpen: boolean
+- onClose: () => void
+- results: RebalanceResult | EnhancedRebalanceResult
+- isEnhanced: boolean
+
+Features:
+1. Slide-in animation from right side
+2. Backdrop overlay with click-to-close
+3. Close button in header
+4. Conditional rendering: EnhancedResultsTable or basic ResultsTable
+5. Summary stats at top (total invested, remaining cash, utilization)
+
+Animation: Use CSS transitions (transform, opacity)
+Width: 80% on mobile, 600px on desktop
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h3 id="step-53-enhanced-results-table"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-53-enhanced-results-table"><span class="octicon octicon-link"></span></a>Step 5.3: Enhanced Results Table</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create EnhancedResultsTable.tsx for detailed results display:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">Props:
+</span><span class="code-line line-number" line="4">- results: EnhancedRebalanceResult
+</span><span class="code-line line-number" line="5">
+</span><span class="code-line line-number" line="6">Sections:
+</span><span class="code-line line-number" line="7">
+</span><span class="code-line line-number" line="8">1. Portfolio Analysis Cards (3 columns):
+</span><span class="code-line line-number" line="9">   - Total Deviation (red if >5%, yellow if >2%, green otherwise)
+</span><span class="code-line line-number" line="10">   - Utilization Rate (percentage of buying power used)
+</span><span class="code-line line-number" line="11">   - Max Deviation (largest single stock gap)
+</span><span class="code-line line-number" line="12">
+</span><span class="code-line line-number" line="13">2. Recommendations Panel:
+</span><span class="code-line line-number" line="14">   - List optimization suggestions from results.analysis
+</span><span class="code-line line-number" line="15">   - Icon-coded by severity
+</span><span class="code-line line-number" line="16">
+</span><span class="code-line line-number" line="17">3. Results Table with columns:
+</span><span class="code-line line-number" line="18">   - Stock Symbol
+</span><span class="code-line line-number" line="19">   - Current Price
+</span><span class="code-line line-number" line="20">   - Current Value (before)
+</span><span class="code-line line-number" line="21">   - Shares to Buy
+</span><span class="code-line line-number" line="22">   - Investment Amount
+</span><span class="code-line line-number" line="23">   - New Value (after)
+</span><span class="code-line line-number" line="24">   - Current % / Target % / Result %
+</span><span class="code-line line-number" line="25">   - Gap from Target
+</span><span class="code-line line-number" line="26">
+</span><span class="code-line line-number" line="27">Color-code gaps: red for underweight, green for on-target
+</span><span class="code-line line-number" line="28">Format all currency and percentage values appropriately
+</span></code><div onclick="copied(this)" data-code="Create EnhancedResultsTable.tsx for detailed results display:
+
+Props:
+- results: EnhancedRebalanceResult
+
+Sections:
+
+1. Portfolio Analysis Cards (3 columns):
+   - Total Deviation (red if >5%, yellow if >2%, green otherwise)
+   - Utilization Rate (percentage of buying power used)
+   - Max Deviation (largest single stock gap)
+
+2. Recommendations Panel:
+   - List optimization suggestions from results.analysis
+   - Icon-coded by severity
+
+3. Results Table with columns:
+   - Stock Symbol
+   - Current Price
+   - Current Value (before)
+   - Shares to Buy
+   - Investment Amount
+   - New Value (after)
+   - Current % / Target % / Result %
+   - Gap from Target
+
+Color-code gaps: red for underweight, green for on-target
+Format all currency and percentage values appropriately
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h3 id="step-54-rebalance-options-component"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-54-rebalance-options-component"><span class="octicon octicon-link"></span></a>Step 5.4: Rebalance Options Component</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create RebalanceOptions.tsx for algorithm configuration:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">Props:
+</span><span class="code-line line-number" line="4">- options: RebalanceOptions
+</span><span class="code-line line-number" line="5">- onChange: (options) => void
+</span><span class="code-line line-number" line="6">
+</span><span class="code-line line-number" line="7">Form elements:
+</span><span class="code-line line-number" line="8">
+</span><span class="code-line line-number" line="9">1. Strategy Dropdown:
+</span><span class="code-line line-number" line="10">   - Greedy: "Always buy most underweight"
+</span><span class="code-line line-number" line="11">   - Proportional: "Distribute by gap size"
+</span><span class="code-line line-number" line="12">   - Hybrid: "Smart combination (recommended)"
+</span><span class="code-line line-number" line="13">
+</span><span class="code-line line-number" line="14">2. Fractional Shares Toggle:
+</span><span class="code-line line-number" line="15">   - Switch/checkbox
+</span><span class="code-line line-number" line="16">   - Helper text explaining the option
+</span><span class="code-line line-number" line="17">
+</span><span class="code-line line-number" line="18">3. Minimum Trade Amount:
+</span><span class="code-line line-number" line="19">   - Number input, default $10
+</span><span class="code-line line-number" line="20">   - "Skip trades smaller than this amount"
+</span><span class="code-line line-number" line="21">
+</span><span class="code-line line-number" line="22">4. Tolerance Percentage:
+</span><span class="code-line line-number" line="23">   - Number input, default 0.5%
+</span><span class="code-line line-number" line="24">   - "Acceptable deviation from target"
+</span><span class="code-line line-number" line="25">
+</span><span class="code-line line-number" line="26">5. Max Iterations:
+</span><span class="code-line line-number" line="27">   - Number input, default 1000
+</span><span class="code-line line-number" line="28">   - "Algorithm iteration limit"
+</span><span class="code-line line-number" line="29">
+</span><span class="code-line line-number" line="30">Collapsible panel with "Advanced Options" header
+</span></code><div onclick="copied(this)" data-code="Create RebalanceOptions.tsx for algorithm configuration:
+
+Props:
+- options: RebalanceOptions
+- onChange: (options) => void
+
+Form elements:
+
+1. Strategy Dropdown:
+   - Greedy: &#x22;Always buy most underweight&#x22;
+   - Proportional: &#x22;Distribute by gap size&#x22;
+   - Hybrid: &#x22;Smart combination (recommended)&#x22;
+
+2. Fractional Shares Toggle:
+   - Switch/checkbox
+   - Helper text explaining the option
+
+3. Minimum Trade Amount:
+   - Number input, default $10
+   - &#x22;Skip trades smaller than this amount&#x22;
+
+4. Tolerance Percentage:
+   - Number input, default 0.5%
+   - &#x22;Acceptable deviation from target&#x22;
+
+5. Max Iterations:
+   - Number input, default 1000
+   - &#x22;Algorithm iteration limit&#x22;
+
+Collapsible panel with &#x22;Advanced Options&#x22; header
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h3 id="step-55-portfolio-manager-component"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-55-portfolio-manager-component"><span class="octicon octicon-link"></span></a>Step 5.5: Portfolio Manager Component</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create PortfolioManager.tsx for saving/loading portfolios:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">Props:
+</span><span class="code-line line-number" line="4">- portfolios: SavedPortfolio[]
+</span><span class="code-line line-number" line="5">- currentId: string | null
+</span><span class="code-line line-number" line="6">- onSave: (name, description) => void
+</span><span class="code-line line-number" line="7">- onLoad: (portfolioId) => void
+</span><span class="code-line line-number" line="8">- onDelete: (portfolioId) => void
+</span><span class="code-line line-number" line="9">- onDuplicate: (portfolioId) => void
+</span><span class="code-line line-number" line="10">
+</span><span class="code-line line-number" line="11">UI Sections:
+</span><span class="code-line line-number" line="12">
+</span><span class="code-line line-number" line="13">1. Save Section:
+</span><span class="code-line line-number" line="14">   - "Save Current Portfolio" button
+</span><span class="code-line line-number" line="15">   - Modal with name input (required) and description textarea
+</span><span class="code-line line-number" line="16">
+</span><span class="code-line line-number" line="17">2. Portfolio List:
+</span><span class="code-line line-number" line="18">   - Card for each saved portfolio
+</span><span class="code-line line-number" line="19">   - Show: name, description (truncated), last updated
+</span><span class="code-line line-number" line="20">   - Actions: Load, Duplicate, Delete (with confirmation)
+</span><span class="code-line line-number" line="21">   - Highlight current portfolio
+</span><span class="code-line line-number" line="22">
+</span><span class="code-line line-number" line="23">3. Empty State:
+</span><span class="code-line line-number" line="24">   - Friendly message when no portfolios saved
+</span><span class="code-line line-number" line="25">   - Prompt to save first portfolio
+</span><span class="code-line line-number" line="26">
+</span><span class="code-line line-number" line="27">Styling: Modal overlays, card grid, hover states
+</span></code><div onclick="copied(this)" data-code="Create PortfolioManager.tsx for saving/loading portfolios:
+
+Props:
+- portfolios: SavedPortfolio[]
+- currentId: string | null
+- onSave: (name, description) => void
+- onLoad: (portfolioId) => void
+- onDelete: (portfolioId) => void
+- onDuplicate: (portfolioId) => void
+
+UI Sections:
+
+1. Save Section:
+   - &#x22;Save Current Portfolio&#x22; button
+   - Modal with name input (required) and description textarea
+
+2. Portfolio List:
+   - Card for each saved portfolio
+   - Show: name, description (truncated), last updated
+   - Actions: Load, Duplicate, Delete (with confirmation)
+   - Highlight current portfolio
+
+3. Empty State:
+   - Friendly message when no portfolios saved
+   - Prompt to save first portfolio
+
+Styling: Modal overlays, card grid, hover states
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h3 id="step-56-auth-form-component"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-56-auth-form-component"><span class="octicon octicon-link"></span></a>Step 5.6: Auth Form Component</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create AuthForm.tsx for sign in/sign up:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">State:
+</span><span class="code-line line-number" line="4">- mode: 'signin' | 'signup'
+</span><span class="code-line line-number" line="5">- email, password, displayName inputs
+</span><span class="code-line line-number" line="6">- loading, error states
+</span><span class="code-line line-number" line="7">
+</span><span class="code-line line-number" line="8">Sign In Form:
+</span><span class="code-line line-number" line="9">- Email input with validation
+</span><span class="code-line line-number" line="10">- Password input (type="password")
+</span><span class="code-line line-number" line="11">- Sign In button
+</span><span class="code-line line-number" line="12">- "Don't have an account? Sign up" link
+</span><span class="code-line line-number" line="13">
+</span><span class="code-line line-number" line="14">Sign Up Form:
+</span><span class="code-line line-number" line="15">- Display name input
+</span><span class="code-line line-number" line="16">- Email input with validation
+</span><span class="code-line line-number" line="17">- Password input with requirements shown
+</span><span class="code-line line-number" line="18">- Confirm password input
+</span><span class="code-line line-number" line="19">- Sign Up button
+</span><span class="code-line line-number" line="20">- "Already have an account? Sign in" link
+</span><span class="code-line line-number" line="21">
+</span><span class="code-line line-number" line="22">Features:
+</span><span class="code-line line-number" line="23">- Form validation before submit
+</span><span class="code-line line-number" line="24">- Error display below form
+</span><span class="code-line line-number" line="25">- Loading spinner on submit
+</span><span class="code-line line-number" line="26">- Auto-focus first field
+</span></code><div onclick="copied(this)" data-code="Create AuthForm.tsx for sign in/sign up:
+
+State:
+- mode: &#x27;signin&#x27; | &#x27;signup&#x27;
+- email, password, displayName inputs
+- loading, error states
+
+Sign In Form:
+- Email input with validation
+- Password input (type=&#x22;password&#x22;)
+- Sign In button
+- &#x22;Don&#x27;t have an account? Sign up&#x22; link
+
+Sign Up Form:
+- Display name input
+- Email input with validation
+- Password input with requirements shown
+- Confirm password input
+- Sign Up button
+- &#x22;Already have an account? Sign in&#x22; link
+
+Features:
+- Form validation before submit
+- Error display below form
+- Loading spinner on submit
+- Auto-focus first field
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <hr>
+    <h2 id="8-phase-6-main-application"><a class="anchor" aria-hidden="true" tabindex="-1" href="#8-phase-6-main-application"><span class="octicon octicon-link"></span></a>8. Phase 6: Main Application</h2>
+    <h3 id="step-61-app-component"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-61-app-component"><span class="octicon octicon-link"></span></a>Step 6.1: App Component</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create the main App.tsx that orchestrates everything:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">Structure:
+</span><span class="code-line line-number" line="4">
+</span><span class="code-line line-number" line="5">1. Authentication Check:
+</span><span class="code-line line-number" line="6">   - If not authenticated, show AuthForm
+</span><span class="code-line line-number" line="7">   - If authenticated, show main app
+</span><span class="code-line line-number" line="8">
+</span><span class="code-line line-number" line="9">2. Header:
+</span><span class="code-line line-number" line="10">   - App title "Stock Rebalancer"
+</span><span class="code-line line-number" line="11">   - User info and Sign Out button
+</span><span class="code-line line-number" line="12">   - Portfolio name (if loaded)
+</span><span class="code-line line-number" line="13">
+</span><span class="code-line line-number" line="14">3. Portfolio Setup Section:
+</span><span class="code-line line-number" line="15">   - Current stock value (calculated)
+</span><span class="code-line line-number" line="16">   - Buying power input
+</span><span class="code-line line-number" line="17">   - Total capital (calculated)
+</span><span class="code-line line-number" line="18">   - Fetch prices button
+</span><span class="code-line line-number" line="19">
+</span><span class="code-line line-number" line="20">4. Stock Inputs Section:
+</span><span class="code-line line-number" line="21">   - Grid of StockInput components
+</span><span class="code-line line-number" line="22">   - Add Stock button
+</span><span class="code-line line-number" line="23">   - Show current prices next to symbols
+</span><span class="code-line line-number" line="24">
+</span><span class="code-line line-number" line="25">5. Options Section:
+</span><span class="code-line line-number" line="26">   - RebalanceOptions component
+</span><span class="code-line line-number" line="27">   - Toggle between basic/advanced mode
+</span><span class="code-line line-number" line="28">
+</span><span class="code-line line-number" line="29">6. Action Buttons:
+</span><span class="code-line line-number" line="30">   - "Calculate Rebalance" button (primary)
+</span><span class="code-line line-number" line="31">   - "Manage Portfolios" button (secondary)
+</span><span class="code-line line-number" line="32">
+</span><span class="code-line line-number" line="33">7. Results Panel:
+</span><span class="code-line line-number" line="34">   - ResultsPanel component (slides in when results ready)
+</span><span class="code-line line-number" line="35">
+</span><span class="code-line line-number" line="36">8. Portfolio Manager:
+</span><span class="code-line line-number" line="37">   - Modal triggered by Manage Portfolios button
+</span><span class="code-line line-number" line="38">
+</span><span class="code-line line-number" line="39">State management:
+</span><span class="code-line line-number" line="40">- Use all custom hooks (useAuth, usePortfolio, useStockPrices, useUserStorage)
+</span><span class="code-line line-number" line="41">- Results caching (5 minute TTL)
+</span><span class="code-line line-number" line="42">- Loading states for API calls
+</span><span class="code-line line-number" line="43">- Error handling with toast/alert messages
+</span></code><div onclick="copied(this)" data-code="Create the main App.tsx that orchestrates everything:
+
+Structure:
+
+1. Authentication Check:
+   - If not authenticated, show AuthForm
+   - If authenticated, show main app
+
+2. Header:
+   - App title &#x22;Stock Rebalancer&#x22;
+   - User info and Sign Out button
+   - Portfolio name (if loaded)
+
+3. Portfolio Setup Section:
+   - Current stock value (calculated)
+   - Buying power input
+   - Total capital (calculated)
+   - Fetch prices button
+
+4. Stock Inputs Section:
+   - Grid of StockInput components
+   - Add Stock button
+   - Show current prices next to symbols
+
+5. Options Section:
+   - RebalanceOptions component
+   - Toggle between basic/advanced mode
+
+6. Action Buttons:
+   - &#x22;Calculate Rebalance&#x22; button (primary)
+   - &#x22;Manage Portfolios&#x22; button (secondary)
+
+7. Results Panel:
+   - ResultsPanel component (slides in when results ready)
+
+8. Portfolio Manager:
+   - Modal triggered by Manage Portfolios button
+
+State management:
+- Use all custom hooks (useAuth, usePortfolio, useStockPrices, useUserStorage)
+- Results caching (5 minute TTL)
+- Loading states for API calls
+- Error handling with toast/alert messages
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h3 id="step-62-app-layout"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-62-app-layout"><span class="octicon octicon-link"></span></a>Step 6.2: App Layout</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Implement the responsive layout for App.tsx:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">Mobile (&#x3C; 640px):
+</span><span class="code-line line-number" line="4">- Single column layout
+</span><span class="code-line line-number" line="5">- Full-width inputs
+</span><span class="code-line line-number" line="6">- Stacked sections
+</span><span class="code-line line-number" line="7">- Results panel full width
+</span><span class="code-line line-number" line="8">
+</span><span class="code-line line-number" line="9">Tablet (640px - 1024px):
+</span><span class="code-line line-number" line="10">- Two column grid for stock inputs
+</span><span class="code-line line-number" line="11">- Side-by-side for some form elements
+</span><span class="code-line line-number" line="12">
+</span><span class="code-line line-number" line="13">Desktop (> 1024px):
+</span><span class="code-line line-number" line="14">- Three column grid for stock inputs
+</span><span class="code-line line-number" line="15">- Max width container (1280px)
+</span><span class="code-line line-number" line="16">- Fixed position results panel
+</span><span class="code-line line-number" line="17">
+</span><span class="code-line line-number" line="18">Use Tailwind responsive prefixes: sm:, md:, lg:, xl:
+</span><span class="code-line line-number" line="19">Add proper spacing (padding, margins, gaps)
+</span><span class="code-line line-number" line="20">Ensure touch-friendly input sizes on mobile
+</span></code><div onclick="copied(this)" data-code="Implement the responsive layout for App.tsx:
+
+Mobile (< 640px):
+- Single column layout
+- Full-width inputs
+- Stacked sections
+- Results panel full width
+
+Tablet (640px - 1024px):
+- Two column grid for stock inputs
+- Side-by-side for some form elements
+
+Desktop (> 1024px):
+- Three column grid for stock inputs
+- Max width container (1280px)
+- Fixed position results panel
+
+Use Tailwind responsive prefixes: sm:, md:, lg:, xl:
+Add proper spacing (padding, margins, gaps)
+Ensure touch-friendly input sizes on mobile
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <hr>
+    <h2 id="9-phase-7-styling--polish"><a class="anchor" aria-hidden="true" tabindex="-1" href="#9-phase-7-styling--polish"><span class="octicon octicon-link"></span></a>9. Phase 7: Styling &#x26; Polish</h2>
+    <h3 id="step-71-design-system"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-71-design-system"><span class="octicon octicon-link"></span></a>Step 7.1: Design System</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Define a consistent design system using Tailwind CSS:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">Colors:
+</span><span class="code-line line-number" line="4">- Primary: Blue (#3B82F6) - buttons, links, focus states
+</span><span class="code-line line-number" line="5">- Success: Green (#10B981) - positive numbers, confirmations
+</span><span class="code-line line-number" line="6">- Warning: Orange (#F59E0B) - warnings, moderate deviations
+</span><span class="code-line line-number" line="7">- Danger: Red (#EF4444) - errors, negative gaps, delete actions
+</span><span class="code-line line-number" line="8">- Neutral: Gray scale for text, borders, backgrounds
+</span><span class="code-line line-number" line="9">
+</span><span class="code-line line-number" line="10">Typography:
+</span><span class="code-line line-number" line="11">- Headings: font-bold, appropriate sizes (text-2xl, text-xl, etc.)
+</span><span class="code-line line-number" line="12">- Body: text-gray-700 for primary, text-gray-500 for secondary
+</span><span class="code-line line-number" line="13">- Numbers: font-mono for financial values
+</span><span class="code-line line-number" line="14">
+</span><span class="code-line line-number" line="15">Components:
+</span><span class="code-line line-number" line="16">- Buttons: rounded-md, px-4 py-2, hover/focus states
+</span><span class="code-line line-number" line="17">- Inputs: border border-gray-300, rounded-md, focus:ring-2
+</span><span class="code-line line-number" line="18">- Cards: bg-white, shadow-md, rounded-lg, p-4
+</span><span class="code-line line-number" line="19">- Modals: fixed inset-0, bg-black/50 backdrop, centered content
+</span></code><div onclick="copied(this)" data-code="Define a consistent design system using Tailwind CSS:
+
+Colors:
+- Primary: Blue (#3B82F6) - buttons, links, focus states
+- Success: Green (#10B981) - positive numbers, confirmations
+- Warning: Orange (#F59E0B) - warnings, moderate deviations
+- Danger: Red (#EF4444) - errors, negative gaps, delete actions
+- Neutral: Gray scale for text, borders, backgrounds
+
+Typography:
+- Headings: font-bold, appropriate sizes (text-2xl, text-xl, etc.)
+- Body: text-gray-700 for primary, text-gray-500 for secondary
+- Numbers: font-mono for financial values
+
+Components:
+- Buttons: rounded-md, px-4 py-2, hover/focus states
+- Inputs: border border-gray-300, rounded-md, focus:ring-2
+- Cards: bg-white, shadow-md, rounded-lg, p-4
+- Modals: fixed inset-0, bg-black/50 backdrop, centered content
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h3 id="step-72-animations--transitions"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-72-animations--transitions"><span class="octicon octicon-link"></span></a>Step 7.2: Animations &#x26; Transitions</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Add smooth animations and transitions:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">1. Results Panel:
+</span><span class="code-line line-number" line="4">   - Slide in from right: transform translateX(100%) -> translateX(0)
+</span><span class="code-line line-number" line="5">   - Duration: 300ms ease-out
+</span><span class="code-line line-number" line="6">   - Backdrop fade: opacity 0 -> 0.5
+</span><span class="code-line line-number" line="7">
+</span><span class="code-line line-number" line="8">2. Loading States:
+</span><span class="code-line line-number" line="9">   - Spinner animation for buttons
+</span><span class="code-line line-number" line="10">   - Skeleton placeholders for prices
+</span><span class="code-line line-number" line="11">   - Pulse animation for loading cards
+</span><span class="code-line line-number" line="12">
+</span><span class="code-line line-number" line="13">3. Interactions:
+</span><span class="code-line line-number" line="14">   - Button hover: slight scale up (1.02)
+</span><span class="code-line line-number" line="15">   - Card hover: shadow increase
+</span><span class="code-line line-number" line="16">   - Input focus: ring and border color change
+</span><span class="code-line line-number" line="17">
+</span><span class="code-line line-number" line="18">4. Notifications:
+</span><span class="code-line line-number" line="19">   - Toast slide up from bottom
+</span><span class="code-line line-number" line="20">   - Auto-dismiss after 3 seconds
+</span><span class="code-line line-number" line="21">   - Exit animation slide down
+</span><span class="code-line line-number" line="22">
+</span><span class="code-line line-number" line="23">Use Tailwind's transition classes and custom @keyframes if needed
+</span></code><div onclick="copied(this)" data-code="Add smooth animations and transitions:
+
+1. Results Panel:
+   - Slide in from right: transform translateX(100%) -> translateX(0)
+   - Duration: 300ms ease-out
+   - Backdrop fade: opacity 0 -> 0.5
+
+2. Loading States:
+   - Spinner animation for buttons
+   - Skeleton placeholders for prices
+   - Pulse animation for loading cards
+
+3. Interactions:
+   - Button hover: slight scale up (1.02)
+   - Card hover: shadow increase
+   - Input focus: ring and border color change
+
+4. Notifications:
+   - Toast slide up from bottom
+   - Auto-dismiss after 3 seconds
+   - Exit animation slide down
+
+Use Tailwind&#x27;s transition classes and custom @keyframes if needed
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <hr>
+    <h2 id="10-phase-8-testing--debugging"><a class="anchor" aria-hidden="true" tabindex="-1" href="#10-phase-8-testing--debugging"><span class="octicon octicon-link"></span></a>10. Phase 8: Testing &#x26; Debugging</h2>
+    <h3 id="step-81-algorithm-testing"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-81-algorithm-testing"><span class="octicon octicon-link"></span></a>Step 8.1: Algorithm Testing</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create test scripts for the rebalancing algorithms:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">test-rebalance.js:
+</span><span class="code-line line-number" line="4">- Test cases for greedy strategy
+</span><span class="code-line line-number" line="5">- Test cases for proportional strategy
+</span><span class="code-line line-number" line="6">- Test cases for hybrid strategy
+</span><span class="code-line line-number" line="7">- Edge cases:
+</span><span class="code-line line-number" line="8">  - All stocks at target
+</span><span class="code-line line-number" line="9">  - Single underweight stock
+</span><span class="code-line line-number" line="10">  - Not enough buying power for any purchase
+</span><span class="code-line line-number" line="11">  - Exact amount available for perfect allocation
+</span><span class="code-line line-number" line="12">
+</span><span class="code-line line-number" line="13">Verify:
+</span><span class="code-line line-number" line="14">- Percentages after rebalance are closer to targets
+</span><span class="code-line line-number" line="15">- Cash utilization is maximized
+</span><span class="code-line line-number" line="16">- No negative shares
+</span><span class="code-line line-number" line="17">- Fractional shares work correctly when enabled
+</span><span class="code-line line-number" line="18">
+</span><span class="code-line line-number" line="19">Output: console log with pass/fail for each test
+</span></code><div onclick="copied(this)" data-code="Create test scripts for the rebalancing algorithms:
+
+test-rebalance.js:
+- Test cases for greedy strategy
+- Test cases for proportional strategy
+- Test cases for hybrid strategy
+- Edge cases:
+  - All stocks at target
+  - Single underweight stock
+  - Not enough buying power for any purchase
+  - Exact amount available for perfect allocation
+
+Verify:
+- Percentages after rebalance are closer to targets
+- Cash utilization is maximized
+- No negative shares
+- Fractional shares work correctly when enabled
+
+Output: console log with pass/fail for each test
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h3 id="step-82-api-debug-panel"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-82-api-debug-panel"><span class="octicon octicon-link"></span></a>Step 8.2: API Debug Panel</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Create ApiDebugPanel.tsx for testing the stock API:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">Features:
+</span><span class="code-line line-number" line="4">1. API Connection Test:
+</span><span class="code-line line-number" line="5">   - Button to test API key validity
+</span><span class="code-line line-number" line="6">   - Show success/error message
+</span><span class="code-line line-number" line="7">
+</span><span class="code-line line-number" line="8">2. Price Fetch Test:
+</span><span class="code-line line-number" line="9">   - Input for stock symbol
+</span><span class="code-line line-number" line="10">   - Fetch button
+</span><span class="code-line line-number" line="11">   - Display returned price and full response
+</span><span class="code-line line-number" line="12">
+</span><span class="code-line line-number" line="13">3. Cache Statistics:
+</span><span class="code-line line-number" line="14">   - Show number of cached symbols
+</span><span class="code-line line-number" line="15">   - Cache hit rate
+</span><span class="code-line line-number" line="16">   - Last cache clear time
+</span><span class="code-line line-number" line="17">
+</span><span class="code-line line-number" line="18">4. Clear Cache Button:
+</span><span class="code-line line-number" line="19">   - Force refresh all prices
+</span><span class="code-line line-number" line="20">
+</span><span class="code-line line-number" line="21">5. Rate Limit Status:
+</span><span class="code-line line-number" line="22">   - Show requests made in last minute
+</span><span class="code-line line-number" line="23">   - Time until rate limit resets
+</span><span class="code-line line-number" line="24">
+</span><span class="code-line line-number" line="25">Only show in development mode (process.env.NODE_ENV === 'development')
+</span></code><div onclick="copied(this)" data-code="Create ApiDebugPanel.tsx for testing the stock API:
+
+Features:
+1. API Connection Test:
+   - Button to test API key validity
+   - Show success/error message
+
+2. Price Fetch Test:
+   - Input for stock symbol
+   - Fetch button
+   - Display returned price and full response
+
+3. Cache Statistics:
+   - Show number of cached symbols
+   - Cache hit rate
+   - Last cache clear time
+
+4. Clear Cache Button:
+   - Force refresh all prices
+
+5. Rate Limit Status:
+   - Show requests made in last minute
+   - Time until rate limit resets
+
+Only show in development mode (process.env.NODE_ENV === &#x27;development&#x27;)
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h3 id="step-83-error-handling"><a class="anchor" aria-hidden="true" tabindex="-1" href="#step-83-error-handling"><span class="octicon octicon-link"></span></a>Step 8.3: Error Handling</h3>
+    <p><strong>Prompt:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Implement comprehensive error handling throughout the app:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">API Errors:
+</span><span class="code-line line-number" line="4">- 401: "Invalid API key - check your configuration"
+</span><span class="code-line line-number" line="5">- 429: "Rate limit exceeded - please wait and try again"
+</span><span class="code-line line-number" line="6">- Network error: "Unable to connect - check your internet"
+</span><span class="code-line line-number" line="7">- Unknown: "Something went wrong - please try again"
+</span><span class="code-line line-number" line="8">
+</span><span class="code-line line-number" line="9">Validation Errors:
+</span><span class="code-line line-number" line="10">- Percentages don't sum to 100: "Target percentages must total 100%"
+</span><span class="code-line line-number" line="11">- Duplicate symbols: "Duplicate stock symbol: {symbol}"
+</span><span class="code-line line-number" line="12">- Invalid inputs: Specific field validation messages
+</span><span class="code-line line-number" line="13">
+</span><span class="code-line line-number" line="14">Auth Errors:
+</span><span class="code-line line-number" line="15">- Invalid credentials: "Email or password is incorrect"
+</span><span class="code-line line-number" line="16">- Email taken: "An account with this email already exists"
+</span><span class="code-line line-number" line="17">- Weak password: "Password must be at least 6 characters"
+</span><span class="code-line line-number" line="18">
+</span><span class="code-line line-number" line="19">Display errors:
+</span><span class="code-line line-number" line="20">- Inline for form fields
+</span><span class="code-line line-number" line="21">- Toast notifications for async operations
+</span><span class="code-line line-number" line="22">- Error boundary for React crashes
+</span><span class="code-line line-number" line="23">
+</span><span class="code-line line-number" line="24">Add retry logic for transient failures (network, rate limits)
+</span></code><div onclick="copied(this)" data-code="Implement comprehensive error handling throughout the app:
+
+API Errors:
+- 401: &#x22;Invalid API key - check your configuration&#x22;
+- 429: &#x22;Rate limit exceeded - please wait and try again&#x22;
+- Network error: &#x22;Unable to connect - check your internet&#x22;
+- Unknown: &#x22;Something went wrong - please try again&#x22;
+
+Validation Errors:
+- Percentages don&#x27;t sum to 100: &#x22;Target percentages must total 100%&#x22;
+- Duplicate symbols: &#x22;Duplicate stock symbol: {symbol}&#x22;
+- Invalid inputs: Specific field validation messages
+
+Auth Errors:
+- Invalid credentials: &#x22;Email or password is incorrect&#x22;
+- Email taken: &#x22;An account with this email already exists&#x22;
+- Weak password: &#x22;Password must be at least 6 characters&#x22;
+
+Display errors:
+- Inline for form fields
+- Toast notifications for async operations
+- Error boundary for React crashes
+
+Add retry logic for transient failures (network, rate limits)
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <hr>
+    <h2 id="11-prompt-templates"><a class="anchor" aria-hidden="true" tabindex="-1" href="#11-prompt-templates"><span class="octicon octicon-link"></span></a>11. Prompt Templates</h2>
+    <h3 id="quick-reference-prompts"><a class="anchor" aria-hidden="true" tabindex="-1" href="#quick-reference-prompts"><span class="octicon octicon-link"></span></a>Quick Reference Prompts</h3>
+    <p><strong>For Bug Fixes:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">I'm getting this error in my stock rebalancer app:
+</span><span class="code-line line-number" line="2">[paste error message]
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4">The error occurs when [describe action].
+</span><span class="code-line line-number" line="5">
+</span><span class="code-line line-number" line="6">Here's the relevant code:
+</span><span class="code-line line-number" line="7">[paste code snippet]
+</span><span class="code-line line-number" line="8">
+</span><span class="code-line line-number" line="9">Please help me fix this bug.
+</span></code><div onclick="copied(this)" data-code="I&#x27;m getting this error in my stock rebalancer app:
+[paste error message]
+
+The error occurs when [describe action].
+
+Here&#x27;s the relevant code:
+[paste code snippet]
+
+Please help me fix this bug.
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <p><strong>For New Features:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">I want to add [feature name] to my stock rebalancer app.
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">Current behavior: [describe what exists]
+</span><span class="code-line line-number" line="4">Desired behavior: [describe what you want]
+</span><span class="code-line line-number" line="5">
+</span><span class="code-line line-number" line="6">The feature should:
+</span><span class="code-line line-number" line="7">1. [requirement 1]
+</span><span class="code-line line-number" line="8">2. [requirement 2]
+</span><span class="code-line line-number" line="9">3. [requirement 3]
+</span><span class="code-line line-number" line="10">
+</span><span class="code-line line-number" line="11">Please provide the implementation with TypeScript types.
+</span></code><div onclick="copied(this)" data-code="I want to add [feature name] to my stock rebalancer app.
+
+Current behavior: [describe what exists]
+Desired behavior: [describe what you want]
+
+The feature should:
+1. [requirement 1]
+2. [requirement 2]
+3. [requirement 3]
+
+Please provide the implementation with TypeScript types.
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <p><strong>For Code Review:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">Please review this code for my stock rebalancer:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">[paste code]
+</span><span class="code-line line-number" line="4">
+</span><span class="code-line line-number" line="5">Check for:
+</span><span class="code-line line-number" line="6">1. TypeScript best practices
+</span><span class="code-line line-number" line="7">2. React hooks rules
+</span><span class="code-line line-number" line="8">3. Performance issues
+</span><span class="code-line line-number" line="9">4. Security vulnerabilities
+</span><span class="code-line line-number" line="10">5. Edge cases
+</span></code><div onclick="copied(this)" data-code="Please review this code for my stock rebalancer:
+
+[paste code]
+
+Check for:
+1. TypeScript best practices
+2. React hooks rules
+3. Performance issues
+4. Security vulnerabilities
+5. Edge cases
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <p><strong>For Refactoring:</strong></p>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">I want to refactor this component/function:
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">[paste code]
+</span><span class="code-line line-number" line="4">
+</span><span class="code-line line-number" line="5">Goals:
+</span><span class="code-line line-number" line="6">- Improve readability
+</span><span class="code-line line-number" line="7">- Better separation of concerns
+</span><span class="code-line line-number" line="8">- More reusable
+</span><span class="code-line line-number" line="9">- Maintain existing functionality
+</span><span class="code-line line-number" line="10">
+</span><span class="code-line line-number" line="11">Please provide the refactored version with explanations.
+</span></code><div onclick="copied(this)" data-code="I want to refactor this component/function:
+
+[paste code]
+
+Goals:
+- Improve readability
+- Better separation of concerns
+- More reusable
+- Maintain existing functionality
+
+Please provide the refactored version with explanations.
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <hr>
+    <h2 id="12-best-practices-for-ai-collaboration"><a class="anchor" aria-hidden="true" tabindex="-1" href="#12-best-practices-for-ai-collaboration"><span class="octicon octicon-link"></span></a>12. Best Practices for AI Collaboration</h2>
+    <h3 id="dos"><a class="anchor" aria-hidden="true" tabindex="-1" href="#dos"><span class="octicon octicon-link"></span></a>Do's</h3>
+    <ol>
+      <li><strong>Be Specific</strong>: Include exact requirements, types, and constraints</li>
+      <li><strong>Provide Context</strong>: Share relevant existing code and project structure</li>
+      <li><strong>Break Down Tasks</strong>: One component or function per prompt</li>
+      <li><strong>Iterate</strong>: Review output, ask for modifications, don't accept blindly</li>
+      <li><strong>Test Incrementally</strong>: Verify each piece works before moving on</li>
+      <li><strong>Ask for Explanations</strong>: Understand the code, not just copy it</li>
+    </ol>
+    <h3 id="donts"><a class="anchor" aria-hidden="true" tabindex="-1" href="#donts"><span class="octicon octicon-link"></span></a>Don'ts</h3>
+    <ol>
+      <li><strong>Don't Skip Review</strong>: Always read and understand generated code</li>
+      <li><strong>Don't Ignore Types</strong>: TypeScript errors indicate real problems</li>
+      <li><strong>Don't Rush</strong>: Quality over speed; fix issues before adding features</li>
+      <li><strong>Don't Combine Tasks</strong>: Complex prompts lead to incomplete solutions</li>
+      <li><strong>Don't Forget Edge Cases</strong>: Ask AI to consider error states and boundaries</li>
+    </ol>
+    <h3 id="effective-prompt-structure"><a class="anchor" aria-hidden="true" tabindex="-1" href="#effective-prompt-structure"><span class="octicon octicon-link"></span></a>Effective Prompt Structure</h3>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">CONTEXT: [What exists, what you're building]
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">TASK: [Specific thing you want done]
+</span><span class="code-line line-number" line="4">
+</span><span class="code-line line-number" line="5">REQUIREMENTS:
+</span><span class="code-line line-number" line="6">- [Requirement 1]
+</span><span class="code-line line-number" line="7">- [Requirement 2]
+</span><span class="code-line line-number" line="8">- [Requirement 3]
+</span><span class="code-line line-number" line="9">
+</span><span class="code-line line-number" line="10">CONSTRAINTS:
+</span><span class="code-line line-number" line="11">- [Technical constraints]
+</span><span class="code-line line-number" line="12">- [Style preferences]
+</span><span class="code-line line-number" line="13">
+</span><span class="code-line line-number" line="14">OUTPUT FORMAT:
+</span><span class="code-line line-number" line="15">- [How you want the response structured]
+</span></code><div onclick="copied(this)" data-code="CONTEXT: [What exists, what you&#x27;re building]
+
+TASK: [Specific thing you want done]
+
+REQUIREMENTS:
+- [Requirement 1]
+- [Requirement 2]
+- [Requirement 3]
+
+CONSTRAINTS:
+- [Technical constraints]
+- [Style preferences]
+
+OUTPUT FORMAT:
+- [How you want the response structured]
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h3 id="iterative-development-flow"><a class="anchor" aria-hidden="true" tabindex="-1" href="#iterative-development-flow"><span class="octicon octicon-link"></span></a>Iterative Development Flow</h3>
+    <pre><code class="code-highlight"><span class="code-line line-number" line="1">1. Prompt AI for initial implementation
+</span><span class="code-line line-number" line="2">         ↓
+</span><span class="code-line line-number" line="3">2. Review generated code
+</span><span class="code-line line-number" line="4">         ↓
+</span><span class="code-line line-number" line="5">3. Test in isolation
+</span><span class="code-line line-number" line="6">         ↓
+</span><span class="code-line line-number" line="7">4. Identify issues/improvements
+</span><span class="code-line line-number" line="8">         ↓
+</span><span class="code-line line-number" line="9">5. Prompt AI for fixes (with specific feedback)
+</span><span class="code-line line-number" line="10">         ↓
+</span><span class="code-line line-number" line="11">6. Repeat until satisfied
+</span><span class="code-line line-number" line="12">         ↓
+</span><span class="code-line line-number" line="13">7. Integrate into project
+</span><span class="code-line line-number" line="14">         ↓
+</span><span class="code-line line-number" line="15">8. Test integration
+</span><span class="code-line line-number" line="16">         ↓
+</span><span class="code-line line-number" line="17">9. Move to next component
+</span></code><div onclick="copied(this)" data-code="1. Prompt AI for initial implementation
+         ↓
+2. Review generated code
+         ↓
+3. Test in isolation
+         ↓
+4. Identify issues/improvements
+         ↓
+5. Prompt AI for fixes (with specific feedback)
+         ↓
+6. Repeat until satisfied
+         ↓
+7. Integrate into project
+         ↓
+8. Test integration
+         ↓
+9. Move to next component
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <hr>
+    <h2 id="appendix-complete-feature-checklist"><a class="anchor" aria-hidden="true" tabindex="-1" href="#appendix-complete-feature-checklist"><span class="octicon octicon-link"></span></a>Appendix: Complete Feature Checklist</h2>
+    <h3 id="core-features"><a class="anchor" aria-hidden="true" tabindex="-1" href="#core-features"><span class="octicon octicon-link"></span></a>Core Features</h3>
+    <ul class="contains-task-list">
+      <li class="task-list-item"><input type="checkbox" disabled> React TypeScript project setup</li>
+      <li class="task-list-item"><input type="checkbox" disabled> Tailwind CSS configuration</li>
+      <li class="task-list-item"><input type="checkbox" disabled> Type definitions for all data structures</li>
+      <li class="task-list-item"><input type="checkbox" disabled> Stock API service with caching</li>
+      <li class="task-list-item"><input type="checkbox" disabled> Basic rebalancing algorithm</li>
+      <li class="task-list-item"><input type="checkbox" disabled> Advanced rebalancing with strategies</li>
+      <li class="task-list-item"><input type="checkbox" disabled> Authentication service</li>
+      <li class="task-list-item"><input type="checkbox" disabled> Portfolio storage service</li>
+    </ul>
+    <h3 id="custom-hooks"><a class="anchor" aria-hidden="true" tabindex="-1" href="#custom-hooks"><span class="octicon octicon-link"></span></a>Custom Hooks</h3>
+    <ul class="contains-task-list">
+      <li class="task-list-item"><input type="checkbox" disabled> usePortfolio for state management</li>
+      <li class="task-list-item"><input type="checkbox" disabled> useAuth for authentication</li>
+      <li class="task-list-item"><input type="checkbox" disabled> useStockPrices for price fetching</li>
+      <li class="task-list-item"><input type="checkbox" disabled> useUserStorage for persistence</li>
+    </ul>
+    <h3 id="ui-components"><a class="anchor" aria-hidden="true" tabindex="-1" href="#ui-components"><span class="octicon octicon-link"></span></a>UI Components</h3>
+    <ul class="contains-task-list">
+      <li class="task-list-item"><input type="checkbox" disabled> StockInput component</li>
+      <li class="task-list-item"><input type="checkbox" disabled> ResultsPanel with animations</li>
+      <li class="task-list-item"><input type="checkbox" disabled> EnhancedResultsTable with analysis</li>
+      <li class="task-list-item"><input type="checkbox" disabled> RebalanceOptions configuration</li>
+      <li class="task-list-item"><input type="checkbox" disabled> PortfolioManager CRUD</li>
+      <li class="task-list-item"><input type="checkbox" disabled> AuthForm sign in/up</li>
+    </ul>
+    <h3 id="polish"><a class="anchor" aria-hidden="true" tabindex="-1" href="#polish"><span class="octicon octicon-link"></span></a>Polish</h3>
+    <ul class="contains-task-list">
+      <li class="task-list-item"><input type="checkbox" disabled> Responsive design</li>
+      <li class="task-list-item"><input type="checkbox" disabled> Loading states</li>
+      <li class="task-list-item"><input type="checkbox" disabled> Error handling</li>
+      <li class="task-list-item"><input type="checkbox" disabled> Animations</li>
+      <li class="task-list-item"><input type="checkbox" disabled> Accessibility</li>
+    </ul>
+    <h3 id="testing"><a class="anchor" aria-hidden="true" tabindex="-1" href="#testing"><span class="octicon octicon-link"></span></a>Testing</h3>
+    <ul class="contains-task-list">
+      <li class="task-list-item"><input type="checkbox" disabled> Algorithm test scripts</li>
+      <li class="task-list-item"><input type="checkbox" disabled> API debug panel</li>
+      <li class="task-list-item"><input type="checkbox" disabled> Error boundary</li>
+    </ul>
+    <hr>
+    <p><em>This guide was created to help developers effectively collaborate with AI assistants to build complex React applications. Follow the phases sequentially for best results.</em></p>
+    <script>/*! @uiw/copy-to-clipboard v1.0.12 | MIT (c) 2021 Kenny Wang | https://github.com/uiwjs/copy-to-clipboard.git */
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).copyTextToClipboard=t()}(this,(function(){"use strict";return function(e,t){const o=document.createElement("textarea");o.value=e,o.setAttribute("readonly",""),o.style={position:"absolute",left:"-9999px"},document.body.appendChild(o);const n=document.getSelection().rangeCount>0&&document.getSelection().getRangeAt(0);o.select();let c=!1;try{c=!!document.execCommand("copy")}catch(e){c=!1}document.body.removeChild(o),n&&document.getSelection&&(document.getSelection().removeAllRanges(),document.getSelection().addRange(n)),t&&t(c)}}));
+
+function copied(target, str) {
+  target.classList.add('active');
+  copyTextToClipboard(target.dataset.code, function() {
+    setTimeout(() => {
+      target.classList.remove('active');
+    }, 2000);
+  });
+}</script>
+  </div></body>
+</html>
