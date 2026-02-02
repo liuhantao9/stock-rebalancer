@@ -1,15 +1,66 @@
-# StockRebalancer
+# Stock Rebalancer
 
-This project is a rebalancer for your stock profolio. This project is written with Angular. It is a simple stock rebalancing tool to help you balance any investment assets. Any investment assets that can be searched by Yahoo Finance API can work. The UI is very clean and easy to use. It allows you to simply add or remove assets and set desired percentage values for them.
+A modern React TypeScript application for calculating optimal stock purchases to rebalance your investment portfolio according to target percentages.
 
-## Running the Project
-Run `npm start` to start the program
+## Features
 
-## Development server
+- **Portfolio Management**: Input current stock holdings and target allocation percentages
+- **Real-time Price Fetching**: Integration with Finnhub API for current stock prices
+- **Smart Rebalancing Algorithm**: Multiple optimization strategies (Hybrid/Greedy/Proportional)
+- **User Authentication**: Sign-in/sign-up with portfolio persistence
+- **Responsive Design**: Built with Tailwind CSS for mobile and desktop
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Getting Started
 
-## Build
+### Prerequisites
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- Node.js (version 14 or higher)
+- npm or yarn
 
+### Installation
+
+```bash
+cd react-app
+npm install
+```
+
+### Configure API Key
+
+```bash
+cp .env.example .env
+# Edit .env and add your Finnhub API key
+```
+
+Get a free API key from: https://finnhub.io/
+
+### Run Development Server
+
+```bash
+npm start
+```
+
+Navigate to `http://localhost:3000`
+
+## Usage
+
+1. Sign in or create an account
+2. Enter your buying power and current stock holdings
+3. Set target percentage allocations for each stock
+4. Click "Rebalance Portfolio" to calculate optimal purchases
+
+## Project Structure
+
+```
+react-app/
+├── src/
+│   ├── components/     # React UI components
+│   ├── hooks/          # Custom React hooks
+│   ├── services/       # Business logic & API services
+│   └── types/          # TypeScript type definitions
+├── public/             # Static assets
+└── package.json        # Dependencies
+```
+
+## License
+
+MIT License
